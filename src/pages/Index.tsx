@@ -304,7 +304,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section - Updated */}
+      {/* Contact Section - Enhanced Hover Effects */}
       <section
         ref={contactRef}
         id="contact"
@@ -322,7 +322,7 @@ const Index = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Email Card - Updated with clickable email */}
+            {/* Email Card - Enhanced Hover Effect */}
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
               <CardHeader className="flex items-center justify-center pb-0">
                 <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
@@ -333,14 +333,14 @@ const Index = () => {
               <CardContent className="text-center pt-4">
                 <a 
                   href="mailto:info@paracras.com" 
-                  className="text-white/80 hover:text-purple-300 transition-colors"
+                  className="text-white/80 hover:text-purple-400 transition-colors hover:shadow-glow"
                 >
                   info@paracras.com
                 </a>
               </CardContent>
             </Card>
             
-            {/* Call Card - Updated with clickable phone number */}
+            {/* Call Card - Enhanced Hover Effect */}
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
               <CardHeader className="flex items-center justify-center pb-0">
                 <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
@@ -351,14 +351,14 @@ const Index = () => {
               <CardContent className="text-center pt-4">
                 <a 
                   href="tel:07388804746" 
-                  className="text-white/80 hover:text-purple-300 transition-colors"
+                  className="text-white/80 hover:text-purple-400 transition-colors hover:shadow-glow"
                 >
                   07388804746
                 </a>
               </CardContent>
             </Card>
             
-            {/* Follow Card - Updated with cleaner design */}
+            {/* Follow Card - Enhanced Icons */}
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
               <CardHeader className="flex items-center justify-center pb-0">
                 <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
@@ -371,17 +371,17 @@ const Index = () => {
                   href="https://instagram.com/paracras" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-white/80 hover:text-purple-300 transition-colors inline-flex items-center justify-center gap-2"
+                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2"
                 >
-                  <Instagram className="h-5 w-5" /> @paracras
+                  <Instagram className="h-5 w-5 hover:shadow-glow transition-all duration-300" /> @paracras
                 </a>
                 <a 
                   href="https://x.com/paracras" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-white/80 hover:text-purple-300 transition-colors inline-flex items-center justify-center gap-2"
+                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2"
                 >
-                  <Twitter className="h-5 w-5" /> @paracras
+                  <Twitter className="h-5 w-5 hover:shadow-glow transition-all duration-300" /> @paracras
                 </a>
               </CardContent>
             </Card>
@@ -389,7 +389,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer - Updated */}
+      {/* Footer */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-500/30">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Left: PARACRAS Logo */}
