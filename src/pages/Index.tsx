@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { ArrowRight, Bot, Workflow, Code } from "lucide-react";
 import ParticleBackground from "@/components/ParticleBackground";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState({
@@ -61,8 +62,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <Navbar />
+      
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-16">
         <div className="absolute inset-0">
           <ParticleBackground />
         </div>
