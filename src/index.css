@@ -131,6 +131,17 @@
       linear-gradient(135deg, rgba(147, 51, 234, 0.3) 0%, transparent 2px, transparent 100%);
     background-size: 20px 20px;
   }
+
+  /* Improved link hover effects */
+  .hover\:shadow-glow:hover {
+    box-shadow: 0 0 15px 0 rgba(147, 51, 234, 0.5);
+    text-shadow: 0 0 8px rgba(147, 51, 234, 0.3);
+  }
+
+  /* Make sure buttons are clickable */
+  button, a {
+    cursor: pointer !important;
+  }
 }
 
 @keyframes fade-in {
@@ -155,4 +166,3 @@
   padding: 0;
   text-align: left;
 }
-

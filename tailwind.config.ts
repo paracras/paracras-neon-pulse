@@ -137,7 +137,10 @@ export default {
 				'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 				'fade-in': 'fade-in 0.3s ease-out',
 				'fade-out': 'fade-out 0.3s ease-out'
-			}
+			},
+			cursor: {
+				pointer: 'pointer',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

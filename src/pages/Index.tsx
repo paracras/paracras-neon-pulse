@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -93,6 +94,16 @@ const Index = () => {
     }
   };
 
+  const handleOpenModal = (modalKey: string) => {
+    console.log("Opening modal:", modalKey);
+    setOpenModal(modalKey);
+  };
+
+  const handleCloseModal = () => {
+    console.log("Closing modal");
+    setOpenModal(null);
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
@@ -150,7 +161,8 @@ const Index = () => {
                 <Button
                   variant="purple"
                   className="mt-auto"
-                  onClick={() => setOpenModal('aiAgents')}
+                  onClick={() => handleOpenModal('aiAgents')}
+                  type="button"
                 >
                   More Info <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -177,7 +189,8 @@ const Index = () => {
                 <Button
                   variant="purple"
                   className="mt-auto"
-                  onClick={() => setOpenModal('workflows')}
+                  onClick={() => handleOpenModal('workflows')}
+                  type="button"
                 >
                   More Info <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -204,7 +217,8 @@ const Index = () => {
                 <Button
                   variant="purple"
                   className="mt-auto"
-                  onClick={() => setOpenModal('webDev')}
+                  onClick={() => handleOpenModal('webDev')}
+                  type="button"
                 >
                   More Info <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -214,7 +228,7 @@ const Index = () => {
         </div>
 
         {/* Service Detail Modals */}
-        <Dialog open={openModal === 'aiAgents'} onOpenChange={(open) => !open && setOpenModal(null)}>
+        <Dialog open={openModal === 'aiAgents'} onOpenChange={(open) => !open && handleCloseModal()}>
           <DialogContent className="bg-black border border-purple-500 max-w-lg">
             <DialogHeader>
               <DialogTitle className="text-2xl text-gradient">{serviceDetails.aiAgents.title}</DialogTitle>
@@ -225,7 +239,8 @@ const Index = () => {
             <div className="flex justify-end">
               <Button 
                 variant="purple"
-                onClick={() => setOpenModal(null)}
+                onClick={handleCloseModal}
+                type="button"
               >
                 Close
               </Button>
@@ -233,7 +248,7 @@ const Index = () => {
           </DialogContent>
         </Dialog>
 
-        <Dialog open={openModal === 'workflows'} onOpenChange={(open) => !open && setOpenModal(null)}>
+        <Dialog open={openModal === 'workflows'} onOpenChange={(open) => !open && handleCloseModal()}>
           <DialogContent className="bg-black border border-purple-500 max-w-lg">
             <DialogHeader>
               <DialogTitle className="text-2xl text-gradient">{serviceDetails.workflows.title}</DialogTitle>
@@ -244,7 +259,8 @@ const Index = () => {
             <div className="flex justify-end">
               <Button 
                 variant="purple"
-                onClick={() => setOpenModal(null)}
+                onClick={handleCloseModal}
+                type="button"
               >
                 Close
               </Button>
@@ -252,7 +268,7 @@ const Index = () => {
           </DialogContent>
         </Dialog>
 
-        <Dialog open={openModal === 'webDev'} onOpenChange={(open) => !open && setOpenModal(null)}>
+        <Dialog open={openModal === 'webDev'} onOpenChange={(open) => !open && handleCloseModal()}>
           <DialogContent className="bg-black border border-purple-500 max-w-lg">
             <DialogHeader>
               <DialogTitle className="text-2xl text-gradient">{serviceDetails.webDev.title}</DialogTitle>
@@ -263,7 +279,8 @@ const Index = () => {
             <div className="flex justify-end">
               <Button 
                 variant="purple"
-                onClick={() => setOpenModal(null)}
+                onClick={handleCloseModal}
+                type="button"
               >
                 Close
               </Button>
@@ -407,7 +424,7 @@ const Index = () => {
               <CardContent className="text-center pt-4">
                 <a 
                   href="mailto:info@paracras.com" 
-                  className="text-white/80 hover:text-purple-400 transition-colors hover:shadow-glow"
+                  className="text-white/80 hover:text-purple-400 transition-colors hover:shadow-glow cursor-pointer"
                 >
                   info@paracras.com
                 </a>
@@ -425,7 +442,7 @@ const Index = () => {
               <CardContent className="text-center pt-4">
                 <a 
                   href="tel:07388804746" 
-                  className="text-white/80 hover:text-purple-400 transition-colors hover:shadow-glow"
+                  className="text-white/80 hover:text-purple-400 transition-colors hover:shadow-glow cursor-pointer"
                 >
                   07388804746
                 </a>
@@ -445,7 +462,7 @@ const Index = () => {
                   href="https://instagram.com/paracras" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2"
+                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Instagram className="h-5 w-5" /> @paracras
                 </a>
@@ -453,7 +470,7 @@ const Index = () => {
                   href="https://x.com/paracras" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2"
+                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Twitter className="h-5 w-5" /> @paracras
                 </a>
