@@ -325,18 +325,101 @@ const Index = () => {
         </Dialog>
 
         <Dialog open={openModal === 'workflows'} onOpenChange={(open) => !open && handleCloseModal()}>
-          <DialogContent className="bg-black border border-purple-500 max-w-lg">
+          <DialogContent className="bg-black/90 backdrop-blur-lg border border-purple-500 max-w-3xl">
             <DialogHeader>
-              <DialogTitle className="text-2xl text-gradient">{serviceDetails.workflows.title}</DialogTitle>
-              <DialogDescription className="text-white">
-                {serviceDetails.workflows.fullDescription}
-              </DialogDescription>
+              <DialogTitle className="text-2xl text-gradient mb-2 flex items-center">
+                <Workflow className="mr-2 h-6 w-6 text-purple-400" /> ⚙️ Automated Workflows
+              </DialogTitle>
             </DialogHeader>
-            <div className="flex justify-end">
+            
+            <ScrollArea className="h-[60vh] pr-4">
+              <div className="space-y-6">
+                <p className="text-white/90">
+                  Automated workflows help businesses streamline repetitive tasks, improve efficiency, and reduce human error. 
+                  Below are some of the most impactful lead-related workflows we offer:
+                </p>
+                
+                <div className="modal-section-divider"></div>
+                
+                {/* AI-Powered Lead Generation */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <span className="text-purple-400 mr-2">🧲</span> 1. AI-Powered Lead Generation
+                  </h3>
+                  <p className="text-white/80 mb-3">
+                    Capture qualified leads across your website and social platforms using smart AI agents.
+                  </p>
+                  <ul className="modal-list-item space-y-1 mb-4">
+                    <li>Engage visitors in real-time</li>
+                    <li>Offer lead magnets (free guides, demos, etc.)</li>
+                    <li>Capture key info without human involvement</li>
+                  </ul>
+                  <p className="modal-content-highlight">
+                    <span className="font-semibold">Key Advantage:</span> Generates more qualified leads, 24/7, across multiple channels.
+                  </p>
+                </div>
+
+                <div className="modal-section-divider"></div>
+                
+                {/* Lead Qualification → CRM Sync */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <span className="text-purple-400 mr-2">🤖</span> 2. Lead Qualification → CRM Sync
+                  </h3>
+                  <p className="text-white/80 mb-3">
+                    After capturing a lead, AI engages them with tailored questions to understand intent, urgency, and potential fit.
+                  </p>
+                  <ul className="modal-list-item space-y-1 mb-4">
+                    <li>Scores leads in real-time</li>
+                    <li>Filters out low-quality prospects</li>
+                    <li>Automatically adds top leads to your CRM</li>
+                  </ul>
+                  <p className="modal-content-highlight">
+                    <span className="font-semibold">Key Advantage:</span> Saves your sales team time and ensures follow-ups are focused on the highest-quality opportunities.
+                  </p>
+                </div>
+
+                <div className="modal-section-divider"></div>
+                
+                {/* Automated Lead Follow-Up */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <span className="text-purple-400 mr-2">🔁</span> 3. Automated Lead Follow-Up
+                  </h3>
+                  <p className="text-white/80 mb-3">
+                    Stay top-of-mind with leads who didn't convert right away.
+                  </p>
+                  <ul className="modal-list-item space-y-1 mb-4">
+                    <li>Sends follow-up emails, SMS, or chatbot messages on smart timers</li>
+                    <li>Offers value and prompts next steps</li>
+                    <li>Re-engages leads automatically</li>
+                  </ul>
+                  <p className="modal-content-highlight">
+                    <span className="font-semibold">Key Advantage:</span> Closes more deals over time with no manual outreach required.
+                  </p>
+                </div>
+
+                <div className="modal-section-divider"></div>
+                
+                {/* Endless Possibilities */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white flex items-center mb-3">
+                    <span className="text-purple-400 mr-2">🔓</span> Endless Possibilities
+                  </h3>
+                  <p className="text-white/80">
+                    These are just a few examples—workflow automation can be tailored to fit any part of your business: operations, 
+                    support, HR, billing, onboarding, and more. If it's repetitive, we can automate it.
+                  </p>
+                </div>
+              </div>
+            </ScrollArea>
+            
+            <div className="flex justify-end mt-6">
               <Button 
                 variant="purple"
                 onClick={handleCloseModal}
                 type="button"
+                className="shadow-glow hover:shadow-glow-intense"
               >
                 Close
               </Button>
@@ -471,7 +554,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section - Enhanced with proper links */}
+      {/* Contact Section */}
       <section
         ref={contactRef}
         id="contact"
