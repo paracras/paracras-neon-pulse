@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,16 +10,14 @@ import ParticleBackground from "@/components/ParticleBackground";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState({
-    features: false,
-    howItWorks: false,
     services: false,
+    howItWorks: false,
     useCases: false,
     contact: false,
   });
 
-  const featuresRef = useRef<HTMLDivElement>(null);
-  const howItWorksRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const howItWorksRef = useRef<HTMLDivElement>(null);
   const useCasesRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
@@ -27,12 +26,10 @@ const Index = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            if (entry.target === featuresRef.current) {
-              setIsVisible((prev) => ({ ...prev, features: true }));
+            if (entry.target === servicesRef.current) {
+              setIsVisible((prev) => ({ ...prev, services: true }));
             } else if (entry.target === howItWorksRef.current) {
               setIsVisible((prev) => ({ ...prev, howItWorks: true }));
-            } else if (entry.target === servicesRef.current) {
-              setIsVisible((prev) => ({ ...prev, services: true }));
             } else if (entry.target === useCasesRef.current) {
               setIsVisible((prev) => ({ ...prev, useCases: true }));
             } else if (entry.target === contactRef.current) {
@@ -44,9 +41,8 @@ const Index = () => {
       { threshold: 0.1 }
     );
 
-    if (featuresRef.current) observer.observe(featuresRef.current);
-    if (howItWorksRef.current) observer.observe(howItWorksRef.current);
     if (servicesRef.current) observer.observe(servicesRef.current);
+    if (howItWorksRef.current) observer.observe(howItWorksRef.current);
     if (useCasesRef.current) observer.observe(useCasesRef.current);
     if (contactRef.current) observer.observe(contactRef.current);
 
@@ -72,7 +68,7 @@ const Index = () => {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
-            Transform your operations with intelligent automation solutions
+            Intelligent AI Automation for Businesses
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-white/80">
             Advanced AI solutions to streamline processes and enhance efficiency
@@ -86,109 +82,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Key Features */}
-      <section
-        ref={featuresRef}
-        className={`py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-opacity duration-1000 ${
-          isVisible.features ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-gradient">
-            Key Features
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "AI-Powered Automation",
-                description:
-                  "Leverage cutting-edge artificial intelligence to automate complex workflows and decision-making processes.",
-              },
-              {
-                title: "Custom Integration",
-                description:
-                  "Seamlessly connect with your existing systems and workflows for smooth operation and data flow.",
-              },
-              {
-                title: "Intelligent Analytics",
-                description:
-                  "Gain valuable insights with advanced data analysis tools and predictive modeling capabilities.",
-              },
-            ].map((feature, index) => (
-              <Card
-                key={index}
-                className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm"
-              >
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
-                    <span className="text-2xl text-purple-400">{index + 1}</span>
-                  </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-white/70">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section
-        ref={howItWorksRef}
-        className={`py-24 px-4 sm:px-6 lg:px-8 bg-black/50 relative transition-opacity duration-1000 ${
-          isVisible.howItWorks ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <div className="absolute inset-0 bg-speed-lines opacity-5"></div>
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-gradient">
-            How It Works
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "Step 1",
-                title: "Consultation",
-                description:
-                  "We analyze your current processes and identify automation opportunities.",
-              },
-              {
-                step: "Step 2",
-                title: "Implementation",
-                description:
-                  "Our team develops and deploys customized AI solutions tailored to your needs.",
-              },
-              {
-                step: "Step 3",
-                title: "Optimization",
-                description:
-                  "Continuous monitoring and refinement to maximize efficiency and results.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="relative p-6 border border-purple-500/30 rounded-lg hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm"
-              >
-                <div className="absolute -top-4 left-4 bg-black px-3 py-1 border border-purple-500 text-purple-400 text-sm">
-                  {item.step}
-                </div>
-                {index < 2 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-purple-500"></div>
-                )}
-                <h3 className="text-xl font-bold mt-4 mb-3">{item.title}</h3>
-                <p className="text-white/70">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section
         ref={servicesRef}
+        id="services"
         className={`py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-opacity duration-1000 ${
           isVisible.services ? "opacity-100" : "opacity-0"
         }`}
@@ -285,9 +182,68 @@ const Index = () => {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section
+        ref={howItWorksRef}
+        id="how-it-works"
+        className={`py-24 px-4 sm:px-6 lg:px-8 bg-black/50 relative transition-opacity duration-1000 ${
+          isVisible.howItWorks ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="absolute inset-0 bg-speed-lines opacity-5"></div>
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-gradient">
+            How It Works
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "Step 1",
+                title: "Customize",
+                description:
+                  "We analyze your requirements and customize solutions that fit your business needs perfectly.",
+                benefit: "Lead Generation",
+              },
+              {
+                step: "Step 2",
+                title: "Integrate",
+                description:
+                  "Seamlessly integrate our solutions with your existing systems and workflows.",
+                benefit: "Support Efficiency",
+              },
+              {
+                step: "Step 3",
+                title: "Automate",
+                description:
+                  "Watch as your business processes transform through intelligent automation.",
+                benefit: "CRM Sync",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="relative p-6 border border-purple-500/30 rounded-lg hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm"
+              >
+                <div className="absolute -top-4 left-4 bg-black px-3 py-1 border border-purple-500 text-purple-400 text-sm">
+                  {item.step}
+                </div>
+                {index < 2 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-purple-500"></div>
+                )}
+                <h3 className="text-xl font-bold mt-4 mb-3">{item.title}</h3>
+                <p className="text-white/70 mb-4">{item.description}</p>
+                <div className="mt-4 inline-block bg-purple-500/10 px-3 py-1 rounded text-purple-300 text-sm">
+                  {item.benefit}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Use Cases */}
       <section
         ref={useCasesRef}
+        id="use-cases"
         className={`py-24 px-4 sm:px-6 lg:px-8 transition-opacity duration-1000 ${
           isVisible.useCases ? "opacity-100" : "opacity-0"
         }`}
@@ -296,50 +252,40 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-gradient">
             Use Cases
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
               {
-                title: "Data Processing",
-                description:
-                  "Automate data extraction, transformation, and loading processes.",
+                title: "E-Commerce",
+                description: "Automated inventory, customer support chatbots, personalized recommendations",
               },
               {
-                title: "Customer Service",
-                description:
-                  "Deploy intelligent chatbots and ticket routing systems.",
+                title: "SaaS",
+                description: "Onboarding automation, user engagement tracking, customer retention workflows",
               },
               {
-                title: "Financial Operations",
-                description:
-                  "Streamline invoicing, reconciliation, and reporting workflows.",
+                title: "Service Industry",
+                description: "Appointment scheduling, follow-up sequences, feedback collection",
               },
               {
-                title: "Supply Chain",
-                description:
-                  "Optimize inventory management and demand forecasting.",
+                title: "Healthcare",
+                description: "Patient communication, appointment reminders, records management",
               },
               {
-                title: "HR Processes",
-                description:
-                  "Automate recruitment, onboarding, and employee management.",
+                title: "Real Estate",
+                description: "Lead qualification, property matching, transaction management",
               },
               {
-                title: "Marketing Analytics",
-                description:
-                  "Enhance customer segmentation and campaign performance analysis.",
+                title: "Education",
+                description: "Student engagement, course delivery, progress tracking",
               },
             ].map((useCase, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-transparent border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm"
+                className="p-4 bg-black border border-purple-500/30 rounded-lg hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm"
               >
-                <CardHeader>
-                  <CardTitle className="text-xl">{useCase.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-white/70">{useCase.description}</p>
-                </CardContent>
-              </Card>
+                <h3 className="text-lg font-bold mb-2 text-white">{useCase.title}</h3>
+                <p className="text-white/70 text-sm">{useCase.description}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -348,6 +294,7 @@ const Index = () => {
       {/* Contact Section */}
       <section
         ref={contactRef}
+        id="contact"
         className={`py-24 px-4 sm:px-6 lg:px-8 bg-black/50 relative transition-opacity duration-1000 ${
           isVisible.contact ? "opacity-100" : "opacity-0"
         }`}
@@ -355,7 +302,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-gradient">
-            Contact Us
+            Book a Call
           </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
@@ -382,18 +329,17 @@ const Index = () => {
               </div>
             </div>
             <div className="space-y-2">
-              <label htmlFor="subject" className="text-sm text-white/80">
-                Subject
+              <label htmlFor="company" className="text-sm text-white/80">
+                Company
               </label>
               <Input
-                id="subject"
+                id="company"
                 className="bg-transparent border-purple-500/50 focus:border-purple-500 text-white"
-                required
               />
             </div>
             <div className="space-y-2">
               <label htmlFor="message" className="text-sm text-white/80">
-                Message
+                Project Description
               </label>
               <Textarea
                 id="message"
@@ -408,8 +354,23 @@ const Index = () => {
                 size="lg"
                 className="bg-purple-600 hover:bg-purple-700 text-white px-8 shadow-glow transition-all duration-300 hover:shadow-glow-intense"
               >
-                Send Message
+                Schedule a Call
               </Button>
+            </div>
+            
+            <div className="flex justify-center space-x-4 mt-8">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+                 className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/40 transition-colors">
+                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+              <a href="mailto:contact@paracras.net" 
+                 className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/40 transition-colors">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </a>
             </div>
           </form>
         </div>
@@ -422,16 +383,20 @@ const Index = () => {
             <h2 className="text-2xl font-bold text-gradient">Paracras</h2>
             <p className="text-white/60">AI Automation Agency</p>
           </div>
-          <div className="flex space-x-4 items-center">
-            <a href="#" className="text-white hover:text-purple-400 transition-colors">
-              Privacy
+          <div className="flex flex-wrap justify-center space-x-4 items-center">
+            <a href="#services" className="text-white hover:text-purple-400 transition-colors">
+              Services
             </a>
             <div className="h-4 w-px bg-purple-500/50"></div>
             <a href="#" className="text-white hover:text-purple-400 transition-colors">
-              Terms
+              About
             </a>
             <div className="h-4 w-px bg-purple-500/50"></div>
             <a href="#" className="text-white hover:text-purple-400 transition-colors">
+              Blog
+            </a>
+            <div className="h-4 w-px bg-purple-500/50"></div>
+            <a href="#contact" className="text-white hover:text-purple-400 transition-colors">
               Contact
             </a>
           </div>

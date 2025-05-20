@@ -9,7 +9,7 @@ document.title = 'Paracras - AI Automation Agency';
 // Add meta description
 const metaDescription = document.createElement('meta');
 metaDescription.name = 'description';
-metaDescription.content = 'Transform your operations with intelligent automation solutions by Paracras, the leading AI Automation Agency';
+metaDescription.content = 'Intelligent AI Automation for Businesses - Transform your operations with intelligent automation solutions by Paracras';
 document.head.appendChild(metaDescription);
 
 createRoot(document.getElementById("root")!).render(<App />);
