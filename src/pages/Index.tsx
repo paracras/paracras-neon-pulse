@@ -1,12 +1,9 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/components/ui/use-toast";
 import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users, Instagram, Twitter } from "lucide-react";
+import { toast } from "@/components/ui/use-toast";
 import ParticleBackground from "@/components/ParticleBackground";
 import Navbar from "@/components/Navbar";
 
@@ -127,7 +124,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section - Updated with shorter descriptions and modal functionality */}
+      {/* Services Section - Updated with working button functionality */}
       <section
         ref={servicesRef}
         id="services"
@@ -141,9 +138,9 @@ const Index = () => {
             Our Services
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {/* AI Agents Card - Updated with shorter description */}
+            {/* AI Agents Card */}
             <Card
-              className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col"
+              className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col contact-card"
             >
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
@@ -160,7 +157,7 @@ const Index = () => {
                 </p>
                 <Button
                   variant="purple"
-                  className="mt-auto"
+                  className="mt-auto more-info-button"
                   onClick={() => handleOpenModal('aiAgents')}
                   type="button"
                 >
@@ -169,9 +166,9 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* Automated Workflows Card - Updated with shorter description */}
+            {/* Automated Workflows Card */}
             <Card
-              className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col"
+              className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col contact-card"
             >
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
@@ -188,7 +185,7 @@ const Index = () => {
                 </p>
                 <Button
                   variant="purple"
-                  className="mt-auto"
+                  className="mt-auto more-info-button"
                   onClick={() => handleOpenModal('workflows')}
                   type="button"
                 >
@@ -197,9 +194,9 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* Web & App Development Card - Updated with shorter description */}
+            {/* Web & App Development Card */}
             <Card
-              className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col"
+              className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col contact-card"
             >
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
@@ -216,7 +213,7 @@ const Index = () => {
                 </p>
                 <Button
                   variant="purple"
-                  className="mt-auto"
+                  className="mt-auto more-info-button"
                   onClick={() => handleOpenModal('webDev')}
                   type="button"
                 >
@@ -395,7 +392,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section - Enhanced with clickable links */}
+      {/* Contact Section - Enhanced with proper links */}
       <section
         ref={contactRef}
         id="contact"
@@ -413,44 +410,42 @@ const Index = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Email Card - Enhanced with clickable link */}
-            <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
-              <CardHeader className="flex items-center justify-center pb-0">
-                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
-                  <Mail className="h-8 w-8 text-purple-400" />
-                </div>
-                <CardTitle className="text-xl text-white">Email</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center pt-4">
-                <a 
-                  href="mailto:info@paracras.com" 
-                  className="text-white/80 hover:text-purple-400 transition-colors hover:shadow-glow cursor-pointer"
-                >
-                  info@paracras.com
-                </a>
-              </CardContent>
-            </Card>
+            {/* Email Card - Properly wrapped in anchor tag */}
+            <a href="mailto:info@paracras.com" className="block w-full" target="_blank" rel="noopener noreferrer">
+              <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 h-full contact-card">
+                <CardHeader className="flex items-center justify-center pb-0">
+                  <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                    <Mail className="h-8 w-8 text-purple-400" />
+                  </div>
+                  <CardTitle className="text-xl text-white">Email</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center pt-4">
+                  <span className="text-white/80 contact-link">
+                    info@paracras.com
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
             
-            {/* Call Card - Enhanced with clickable link */}
-            <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
-              <CardHeader className="flex items-center justify-center pb-0">
-                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
-                  <Phone className="h-8 w-8 text-purple-400" />
-                </div>
-                <CardTitle className="text-xl text-white">Call</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center pt-4">
-                <a 
-                  href="tel:07388804746" 
-                  className="text-white/80 hover:text-purple-400 transition-colors hover:shadow-glow cursor-pointer"
-                >
-                  07388804746
-                </a>
-              </CardContent>
-            </Card>
+            {/* Call Card - Properly wrapped in anchor tag */}
+            <a href="tel:07388804746" className="block w-full">
+              <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 h-full contact-card">
+                <CardHeader className="flex items-center justify-center pb-0">
+                  <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                    <Phone className="h-8 w-8 text-purple-400" />
+                  </div>
+                  <CardTitle className="text-xl text-white">Call</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center pt-4">
+                  <span className="text-white/80 contact-link">
+                    07388804746
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
             
-            {/* Follow Card - Enhanced with clickable social links */}
-            <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
+            {/* Follow Card - With proper social links */}
+            <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 h-full contact-card">
               <CardHeader className="flex items-center justify-center pb-0">
                 <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
                   <Users className="h-8 w-8 text-purple-400" />
@@ -462,7 +457,7 @@ const Index = () => {
                   href="https://instagram.com/paracras" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
+                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2 contact-link"
                 >
                   <Instagram className="h-5 w-5" /> @paracras
                 </a>
@@ -470,7 +465,7 @@ const Index = () => {
                   href="https://x.com/paracras" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
+                  className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2 contact-link"
                 >
                   <Twitter className="h-5 w-5" /> @paracras
                 </a>

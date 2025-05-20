@@ -138,9 +138,42 @@
     text-shadow: 0 0 8px rgba(147, 51, 234, 0.3);
   }
 
+  /* Contact card hover effects */
+  .contact-card {
+    @apply transition-all duration-300;
+  }
+  
+  .contact-card:hover, .contact-card:focus-within {
+    @apply border-purple-500 shadow-glow;
+    transform: translateY(-2px);
+  }
+  
   /* Make sure buttons are clickable */
   button, a {
     cursor: pointer !important;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* More info button hover effect */
+  .more-info-button {
+    @apply transition-all duration-300;
+  }
+  
+  .more-info-button:hover, .more-info-button:focus {
+    @apply shadow-glow-intense;
+    transform: translateY(-1px);
+  }
+  
+  /* Contact link hover effects */
+  .contact-link {
+    @apply transition-all duration-300;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .contact-link:hover, .contact-link:focus {
+    @apply text-purple-400 shadow-glow;
   }
 }
 
