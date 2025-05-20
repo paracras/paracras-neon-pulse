@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -149,7 +148,8 @@ const Index = () => {
                   Deploy smart virtual assistants across your website, phone, and social media.
                 </p>
                 <Button
-                  className="bg-purple-600 hover:bg-purple-700 text-white mt-auto shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                  variant="purple"
+                  className="mt-auto"
                   onClick={() => setOpenModal('aiAgents')}
                 >
                   More Info <ArrowRight className="ml-2 h-4 w-4" />
@@ -175,7 +175,8 @@ const Index = () => {
                   Streamline operations with custom-built automations tailored to your business.
                 </p>
                 <Button
-                  className="bg-purple-600 hover:bg-purple-700 text-white mt-auto shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                  variant="purple"
+                  className="mt-auto"
                   onClick={() => setOpenModal('workflows')}
                 >
                   More Info <ArrowRight className="ml-2 h-4 w-4" />
@@ -201,7 +202,8 @@ const Index = () => {
                   Get high-performance websites and apps built with modern design and functionality.
                 </p>
                 <Button
-                  className="bg-purple-600 hover:bg-purple-700 text-white mt-auto shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                  variant="purple"
+                  className="mt-auto"
                   onClick={() => setOpenModal('webDev')}
                 >
                   More Info <ArrowRight className="ml-2 h-4 w-4" />
@@ -222,7 +224,7 @@ const Index = () => {
             </DialogHeader>
             <div className="flex justify-end">
               <Button 
-                className="bg-purple-600 hover:bg-purple-700 text-white shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                variant="purple"
                 onClick={() => setOpenModal(null)}
               >
                 Close
@@ -241,7 +243,7 @@ const Index = () => {
             </DialogHeader>
             <div className="flex justify-end">
               <Button 
-                className="bg-purple-600 hover:bg-purple-700 text-white shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                variant="purple"
                 onClick={() => setOpenModal(null)}
               >
                 Close
@@ -260,7 +262,7 @@ const Index = () => {
             </DialogHeader>
             <div className="flex justify-end">
               <Button 
-                className="bg-purple-600 hover:bg-purple-700 text-white shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                variant="purple"
                 onClick={() => setOpenModal(null)}
               >
                 Close
@@ -376,7 +378,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section - Enhanced Hover Effects */}
+      {/* Contact Section - Enhanced with clickable links */}
       <section
         ref={contactRef}
         id="contact"
@@ -394,7 +396,7 @@ const Index = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Email Card - Enhanced Hover Effect */}
+            {/* Email Card - Enhanced with clickable link */}
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
               <CardHeader className="flex items-center justify-center pb-0">
                 <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
@@ -412,7 +414,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            {/* Call Card - Enhanced Hover Effect */}
+            {/* Call Card - Enhanced with clickable link */}
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
               <CardHeader className="flex items-center justify-center pb-0">
                 <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
@@ -430,7 +432,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            {/* Follow Card - Enhanced Icons */}
+            {/* Follow Card - Enhanced with clickable social links */}
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
               <CardHeader className="flex items-center justify-center pb-0">
                 <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
@@ -445,7 +447,7 @@ const Index = () => {
                   rel="noopener noreferrer" 
                   className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2"
                 >
-                  <Instagram className="h-5 w-5 hover:shadow-glow transition-all duration-300" /> @paracras
+                  <Instagram className="h-5 w-5" /> @paracras
                 </a>
                 <a 
                   href="https://x.com/paracras" 
@@ -453,7 +455,7 @@ const Index = () => {
                   rel="noopener noreferrer" 
                   className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2"
                 >
-                  <Twitter className="h-5 w-5 hover:shadow-glow transition-all duration-300" /> @paracras
+                  <Twitter className="h-5 w-5" /> @paracras
                 </a>
               </CardContent>
             </Card>
