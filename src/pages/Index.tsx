@@ -6,6 +6,7 @@ import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users, Instagram, Twitter
 import { toast } from "@/components/ui/use-toast";
 import ParticleBackground from "@/components/ParticleBackground";
 import Navbar from "@/components/Navbar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState({
@@ -226,18 +227,96 @@ const Index = () => {
 
         {/* Service Detail Modals */}
         <Dialog open={openModal === 'aiAgents'} onOpenChange={(open) => !open && handleCloseModal()}>
-          <DialogContent className="bg-black border border-purple-500 max-w-lg">
+          <DialogContent className="bg-black border border-purple-500 max-w-3xl">
             <DialogHeader>
-              <DialogTitle className="text-2xl text-gradient">{serviceDetails.aiAgents.title}</DialogTitle>
-              <DialogDescription className="text-white">
-                {serviceDetails.aiAgents.fullDescription}
-              </DialogDescription>
+              <DialogTitle className="text-2xl text-gradient mb-6 flex items-center">
+                <Bot className="mr-2 h-6 w-6 text-purple-400" /> AI Agents
+              </DialogTitle>
             </DialogHeader>
-            <div className="flex justify-end">
+            
+            <ScrollArea className="h-[60vh] pr-4">
+              <div className="space-y-8">
+                {/* Website Chatbots Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3">1. Website Chatbots</h3>
+                  <p className="text-white/80 mb-3">
+                    Build intelligent, real-time chatbots for your website that engage visitors the moment they arrive. These bots can:
+                  </p>
+                  <ul className="text-white/80 list-disc pl-5 space-y-1 mb-4">
+                    <li>Answer frequently asked questions instantly</li>
+                    <li>Qualify leads based on user responses</li>
+                    <li>Book appointments directly into your calendar</li>
+                    <li>Work 24/7 to support your users and reduce manual load</li>
+                  </ul>
+                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
+                    <span className="font-semibold">Key advantage:</span> Handles the majority of user questions without human intervention and seamlessly integrates with your calendar tools to automate scheduling.
+                  </p>
+                </div>
+
+                <div className="border-t border-purple-500/30 pt-6"></div>
+                
+                {/* AI Receptionists Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3">2. AI Receptionists</h3>
+                  <p className="text-white/80 mb-3">
+                    Your automated front-desk assistant for phone calls. These AI receptionists can:
+                  </p>
+                  <ul className="text-white/80 list-disc pl-5 space-y-1 mb-4">
+                    <li>Handle inbound and outbound phone calls using realistic voice synthesis</li>
+                    <li>Understand natural language to take messages, answer queries, and guide callers</li>
+                    <li>Book appointments automatically after confirming availability</li>
+                    <li>Route urgent calls to the right human contact</li>
+                  </ul>
+                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
+                    <span className="font-semibold">Key advantage:</span> Drastically reduce missed calls and scale your customer-facing operations without hiring more staff.
+                  </p>
+                </div>
+
+                <div className="border-t border-purple-500/30 pt-6"></div>
+                
+                {/* Social Media Chatbots Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3">3. Social Media Chatbots</h3>
+                  <p className="text-white/80 mb-3">
+                    Deploy smart AI agents on platforms like Instagram, Facebook, and WhatsApp to:
+                  </p>
+                  <ul className="text-white/80 list-disc pl-5 space-y-1 mb-4">
+                    <li>Automatically reply to DMs</li>
+                    <li>Capture leads and guide users to relevant offers or pages</li>
+                    <li>Book appointments directly within the conversation</li>
+                    <li>Maintain consistent brand voice and availability across platforms</li>
+                  </ul>
+                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
+                    <span className="font-semibold">Key advantage:</span> Manage hundreds of conversations simultaneously and never miss a sales or support opportunity.
+                  </p>
+                </div>
+
+                <div className="border-t border-purple-500/30 pt-6"></div>
+                
+                {/* Overall Benefits Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white flex items-center mb-3">
+                    <span className="text-purple-400 mr-2">✓</span> Overall Benefits of AI Agents
+                  </h3>
+                  <ul className="text-white/80 list-disc pl-5 space-y-2">
+                    <li>Reduce manual workload and free up team resources</li>
+                    <li>Save time with 24/7 intelligent automation</li>
+                    <li>Increase appointment bookings with automated scheduling</li>
+                    <li>Boost customer satisfaction with fast, helpful responses</li>
+                    <li>Generate revenue through improved lead capture and responsiveness</li>
+                    <li>Reduce expenses by replacing repetitive tasks with AI</li>
+                    <li>Customize tone and behavior to match your brand identity</li>
+                  </ul>
+                </div>
+              </div>
+            </ScrollArea>
+            
+            <div className="flex justify-end mt-6">
               <Button 
                 variant="purple"
                 onClick={handleCloseModal}
                 type="button"
+                className="shadow-glow hover:shadow-glow-intense"
               >
                 Close
               </Button>
