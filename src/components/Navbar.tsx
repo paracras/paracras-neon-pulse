@@ -48,9 +48,9 @@ const Navbar = () => {
         <div className="px-6">
           <nav className="flex justify-between items-center">
             {/* Logo */}
-            <div>
+            <div className="mr-6 md:mr-12">
               <h1 
-                className="text-2xl font-bold text-white hover:text-gradient cursor-pointer py-2"
+                className="text-2xl font-bold text-white hover:text-gradient cursor-pointer py-2 font-poppins uppercase tracking-wider"
                 onClick={() => scrollToSection('hero')}
               >
                 Paracras
@@ -68,7 +68,7 @@ const Navbar = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-purple-400 transition-colors relative group py-2"
+                  className="text-white hover:text-purple-400 transition-colors relative group py-2 font-poppins"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
@@ -108,7 +108,7 @@ const Navbar = () => {
               <div key={item.id} className="block">
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-purple-400 transition-colors w-full text-left py-2"
+                  className="text-white hover:text-purple-400 transition-colors w-full text-left py-2 font-poppins"
                 >
                   {item.name}
                 </button>

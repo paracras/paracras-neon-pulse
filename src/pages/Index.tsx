@@ -86,7 +86,7 @@ const Index = () => {
           <ParticleBackground />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-10 text-gradient">
+          <h1 className="text-4xl md:text-6xl font-bold mb-10 text-gradient font-poppins">
             Future Ready AI
           </h1>
           <Button
