@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -216,24 +215,24 @@ const Index = () => {
             {[
               {
                 step: "Step 1",
-                title: "Customize",
+                title: "Discover",
                 description:
-                  "We analyze your requirements and customize solutions that fit your business needs perfectly.",
-                benefit: "Lead Generation",
+                  "We start by understanding your business, goals, and challenges through a strategy call. This helps us define what you need and how AI automation can deliver real value.",
+                benefit: "Strategy Call",
               },
               {
                 step: "Step 2",
-                title: "Integrate",
+                title: "Implement",
                 description:
-                  "Seamlessly integrate our solutions with your existing systems and workflows.",
-                benefit: "Support Efficiency",
+                  "We design and implement your automation solution—whether it's an AI agent, custom workflow, or integrated tool—tailored specifically to your operations.",
+                benefit: "Custom Setup",
               },
               {
                 step: "Step 3",
-                title: "Automate",
+                title: "Support",
                 description:
-                  "Watch as your business processes transform through intelligent automation.",
-                benefit: "CRM Sync",
+                  "We provide continuous support and optimization to ensure your automations evolve with your business and deliver lasting impact.",
+                benefit: "Ongoing Success",
               },
             ].map((item, index) => (
               <div
@@ -243,9 +242,6 @@ const Index = () => {
                 <div className="absolute -top-4 left-4 bg-black px-3 py-1 border border-purple-500 text-purple-400 text-sm">
                   {item.step}
                 </div>
-                {index < 2 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-purple-500"></div>
-                )}
                 <h3 className="text-xl font-bold mt-4 mb-3">{item.title}</h3>
                 <p className="text-white/70 mb-4">{item.description}</p>
                 <div className="mt-4 inline-block bg-purple-500/10 px-3 py-1 rounded text-purple-300 text-sm">
