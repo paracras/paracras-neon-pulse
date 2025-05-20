@@ -1,23 +1,24 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Bot, Workflow, Code } from "lucide-react";
 import ParticleBackground from "@/components/ParticleBackground";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState({
     features: false,
     howItWorks: false,
+    services: false,
     useCases: false,
     contact: false,
   });
 
   const featuresRef = useRef<HTMLDivElement>(null);
   const howItWorksRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const useCasesRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
@@ -30,6 +31,8 @@ const Index = () => {
               setIsVisible((prev) => ({ ...prev, features: true }));
             } else if (entry.target === howItWorksRef.current) {
               setIsVisible((prev) => ({ ...prev, howItWorks: true }));
+            } else if (entry.target === servicesRef.current) {
+              setIsVisible((prev) => ({ ...prev, services: true }));
             } else if (entry.target === useCasesRef.current) {
               setIsVisible((prev) => ({ ...prev, useCases: true }));
             } else if (entry.target === contactRef.current) {
@@ -43,6 +46,7 @@ const Index = () => {
 
     if (featuresRef.current) observer.observe(featuresRef.current);
     if (howItWorksRef.current) observer.observe(howItWorksRef.current);
+    if (servicesRef.current) observer.observe(servicesRef.current);
     if (useCasesRef.current) observer.observe(useCasesRef.current);
     if (contactRef.current) observer.observe(contactRef.current);
 
@@ -178,6 +182,105 @@ const Index = () => {
                 <p className="text-white/70">{item.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section
+        ref={servicesRef}
+        className={`py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-opacity duration-1000 ${
+          isVisible.services ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-gradient">
+            Our Services
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* AI Agents Card */}
+            <Card
+              className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col"
+            >
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                  <Bot className="h-6 w-6 text-purple-400" />
+                </div>
+                <CardTitle className="text-xl text-white">AI Agents</CardTitle>
+                <p className="text-purple-300 text-sm mt-2">
+                  Website Chatbots • AI Receptionists • Social Media Chatbots
+                </p>
+              </CardHeader>
+              <CardContent className="flex flex-col flex-grow">
+                <p className="text-white/70 mb-6 flex-grow">
+                  Build intelligent, always-on virtual assistants tailored to your brand. 
+                  From website-based chatbots and AI receptionists to social media bots — 
+                  each is equipped with advanced NLP, seamless human handoff, and proactive 
+                  engagement. Turn passive visitors into active conversations.
+                </p>
+                <Button
+                  className="bg-purple-600 hover:bg-purple-700 text-white mt-auto shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                >
+                  Explore AI Agents <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Automated Workflows Card */}
+            <Card
+              className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col"
+            >
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                  <Workflow className="h-6 w-6 text-purple-400" />
+                </div>
+                <CardTitle className="text-xl text-white">Automated Workflows</CardTitle>
+                <p className="text-purple-300 text-sm mt-2">
+                  Custom workflows built around your business needs
+                </p>
+              </CardHeader>
+              <CardContent className="flex flex-col flex-grow">
+                <p className="text-white/70 mb-6 flex-grow">
+                  Eliminate repetitive tasks with end-to-end workflows triggered by events, 
+                  data, or human input. We integrate your tools (CRM, email, Slack, etc.) 
+                  to automate lead routing, follow‑ups, order processing, reporting and more — 
+                  so your business runs smarter, faster, and effortlessly.
+                </p>
+                <Button
+                  className="bg-purple-600 hover:bg-purple-700 text-white mt-auto shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                >
+                  See Workflow Examples <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Web & App Development Card */}
+            <Card
+              className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col"
+            >
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                  <Code className="h-6 w-6 text-purple-400" />
+                </div>
+                <CardTitle className="text-xl text-white">Web & App Development</CardTitle>
+                <p className="text-purple-300 text-sm mt-2">
+                  Futuristic web & mobile experiences
+                </p>
+              </CardHeader>
+              <CardContent className="flex flex-col flex-grow">
+                <p className="text-white/70 mb-6 flex-grow">
+                  From dynamic marketing sites to native/hybrid mobile apps and custom dashboards — 
+                  we deliver polished, high-performance, responsive solutions. All built mobile-first 
+                  and infused with your brand's bold black-purple-white glow.
+                </p>
+                <Button
+                  className="bg-purple-600 hover:bg-purple-700 text-white mt-auto shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                >
+                  Start a Project <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
