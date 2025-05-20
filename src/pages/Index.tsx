@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
-import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users } from "lucide-react";
+import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users, Instagram, Twitter } from "lucide-react";
 import ParticleBackground from "@/components/ParticleBackground";
 import Navbar from "@/components/Navbar";
 
@@ -373,33 +373,41 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer - Updated */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-500/30">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          {/* Left: PARACRAS Logo */}
           <div className="mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold text-gradient">Paracras</h2>
+            <h2 className="text-2xl font-bold text-gradient font-poppins">PARACRAS</h2>
             <p className="text-white/60">AI Automation Agency</p>
           </div>
-          <div className="flex flex-wrap justify-center space-x-4 items-center">
-            <a href="#services" className="text-white hover:text-purple-400 transition-colors">
-              Services
+          
+          {/* Center: Copyright */}
+          <div className="mb-6 md:mb-0 text-center text-white/70 text-sm">
+            © 2025 Paracras LTD. All rights reserved.
+          </div>
+          
+          {/* Right: Social Icons */}
+          <div className="flex space-x-6">
+            <a 
+              href="https://instagram.com/paracras" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+              className="text-white hover:text-purple-400 transition-colors"
+            >
+              <Instagram className="h-6 w-6 hover:shadow-glow transition-all duration-300" />
             </a>
-            <div className="h-4 w-px bg-purple-500/50"></div>
-            <a href="#" className="text-white hover:text-purple-400 transition-colors">
-              About
-            </a>
-            <div className="h-4 w-px bg-purple-500/50"></div>
-            <a href="#" className="text-white hover:text-purple-400 transition-colors">
-              Blog
-            </a>
-            <div className="h-4 w-px bg-purple-500/50"></div>
-            <a href="#contact" className="text-white hover:text-purple-400 transition-colors">
-              Contact
+            <a 
+              href="https://x.com/paracras" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on X (Twitter)"
+              className="text-white hover:text-purple-400 transition-colors"
+            >
+              <Twitter className="h-6 w-6 hover:shadow-glow transition-all duration-300" />
             </a>
           </div>
-        </div>
-        <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-purple-500/20 text-center text-white/40 text-sm">
-          © {new Date().getFullYear()} Paracras. All rights reserved.
         </div>
       </footer>
     </div>
