@@ -40,17 +40,17 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'py-2 shadow-glow-sm' : 'py-4'
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+        scrolled ? 'py-2' : 'py-3'
       }`}
     >
-      <div className="backdrop-blur-xl bg-black/30 border-b border-purple-500/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="backdrop-blur-xl bg-black/30 border border-purple-500/30 rounded-full shadow-glow-sm max-w-5xl mx-auto">
+        <div className="px-6">
           <nav className="flex justify-between items-center">
             {/* Logo */}
             <div>
               <h1 
-                className="text-2xl font-bold text-white hover:text-gradient cursor-pointer"
+                className="text-2xl font-bold text-white hover:text-gradient cursor-pointer py-2"
                 onClick={() => scrollToSection('hero')}
               >
                 Paracras
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-purple-400 transition-colors relative group"
+                  className="text-white hover:text-purple-400 transition-colors relative group py-2"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
@@ -98,7 +98,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden backdrop-blur-xl bg-black/90 border-b border-purple-500/30 animate-fade-in">
+        <div className="md:hidden backdrop-blur-xl bg-black/90 border border-purple-500/30 rounded-2xl mt-2 shadow-glow-sm animate-fade-in">
           <div className="px-4 pt-2 pb-4 space-y-4">
             {[
               { name: "Home", id: "hero" },
