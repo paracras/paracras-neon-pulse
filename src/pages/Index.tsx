@@ -396,10 +396,10 @@ const Index = () => {
 
                 <div className="modal-section-divider"></div>
                 
-                {/* Endless Possibilities */}
+                {/* Endless Possibilities - Updated with checkmark */}
                 <div>
                   <h3 className="text-xl font-semibold text-white flex items-center mb-3">
-                    <span className="text-purple-400 mr-2"></span> Endless Possibilities
+                    <span className="text-purple-400 mr-2">✓</span> Endless Workflow Possibilities
                   </h3>
                   <p className="text-white/80">
                     These are just a few examples—workflow automation can be tailored to fit any part of your business: operations, 
@@ -494,10 +494,10 @@ const Index = () => {
 
                 <div className="border-t border-purple-500/30 pt-6"></div>
                 
-                {/* Built for Scale Section */}
+                {/* Built for Scale Section - Updated with checkmark */}
                 <div>
                   <h3 className="text-xl font-semibold text-white flex items-center mb-3">
-                    <span className="text-purple-400 mr-2"></span> Built for Scale
+                    <span className="text-purple-400 mr-2">✓</span> Built for Scale
                   </h3>
                   <p className="text-white/80">
                     Whether you're launching a new idea or modernizing your tech stack, we build with the future in mind — 

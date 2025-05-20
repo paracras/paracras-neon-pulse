@@ -109,15 +109,15 @@
   }
   
   .shadow-glow {
-    box-shadow: 0 0 15px 0 rgba(147, 51, 234, 0.5);
+    box-shadow: 0 0 15px 0 rgba(147, 51, 234, 0.4);
   }
   
   .shadow-glow-sm {
-    box-shadow: 0 0 10px 0 rgba(147, 51, 234, 0.3);
+    box-shadow: 0 0 10px 0 rgba(147, 51, 234, 0.2);
   }
   
   .shadow-glow-intense {
-    box-shadow: 0 0 20px 5px rgba(147, 51, 234, 0.7);
+    box-shadow: 0 0 20px 5px rgba(147, 51, 234, 0.5);
   }
   
   .bg-grid-pattern {
@@ -172,14 +172,15 @@
     z-index: 10;
   }
   
-  /* More info button hover effect */
+  /* More info button hover effect - Updated for softer hover */
   .more-info-button {
     @apply transition-all duration-300;
   }
   
   .more-info-button:hover, .more-info-button:focus {
-    @apply shadow-glow-intense;
+    @apply shadow-glow;
     transform: translateY(-1px);
+    outline: 1px solid rgba(147, 51, 234, 0.5);
   }
   
   /* Contact link hover effects */
