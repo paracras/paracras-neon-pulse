@@ -428,18 +428,104 @@ const Index = () => {
         </Dialog>
 
         <Dialog open={openModal === 'webDev'} onOpenChange={(open) => !open && handleCloseModal()}>
-          <DialogContent className="bg-black border border-purple-500 max-w-lg">
+          <DialogContent className="bg-black border border-purple-500 max-w-3xl">
             <DialogHeader>
-              <DialogTitle className="text-2xl text-gradient">{serviceDetails.webDev.title}</DialogTitle>
-              <DialogDescription className="text-white">
-                {serviceDetails.webDev.fullDescription}
-              </DialogDescription>
+              <DialogTitle className="text-2xl text-gradient mb-6 flex items-center">
+                <Code className="mr-2 h-6 w-6 text-purple-400" /> 💻 Web & App Development
+              </DialogTitle>
             </DialogHeader>
-            <div className="flex justify-end">
+            
+            <ScrollArea className="h-[60vh] pr-4">
+              <div className="space-y-8">
+                <p className="text-white/90">
+                  We build sleek, high-performance websites and applications that are designed to impress and built to perform. 
+                  Whether it's a marketing site, an internal dashboard, or a mobile app — we handle it end-to-end.
+                </p>
+                
+                <div className="border-t border-purple-500/30 pt-6"></div>
+                
+                {/* Website Development Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <span className="text-purple-400 mr-2">🕸️</span> 1. Website Development
+                  </h3>
+                  <p className="text-white/80 mb-3">
+                    From landing pages to full-scale websites, we deliver visually stunning, fast-loading, and responsive sites built to convert.
+                  </p>
+                  <ul className="text-white/80 list-disc pl-5 space-y-1 mb-4">
+                    <li>Mobile-first, modern design</li>
+                    <li>Optimized for speed and SEO</li>
+                    <li>Integrated with analytics and third-party tools</li>
+                    <li>Custom animations and branded visuals</li>
+                  </ul>
+                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
+                    <span className="font-semibold">Key advantage:</span> Your website becomes your best salesperson — accessible, compelling, and conversion-focused.
+                  </p>
+                </div>
+
+                <div className="border-t border-purple-500/30 pt-6"></div>
+                
+                {/* App Development Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <span className="text-purple-400 mr-2">📱</span> 2. App Development
+                  </h3>
+                  <p className="text-white/80 mb-3">
+                    We develop web and mobile apps that are intuitive, scalable, and lightning-fast.
+                  </p>
+                  <ul className="text-white/80 list-disc pl-5 space-y-1 mb-4">
+                    <li>Web apps, dashboards, admin panels</li>
+                    <li>Native or hybrid mobile apps (iOS & Android)</li>
+                    <li>API integrations and backend support</li>
+                    <li>User-friendly interfaces and clean code</li>
+                  </ul>
+                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
+                    <span className="font-semibold">Key advantage:</span> Turn your business idea or workflow into a fully functioning digital product that drives real value.
+                  </p>
+                </div>
+
+                <div className="border-t border-purple-500/30 pt-6"></div>
+                
+                {/* End-to-End Development Stack Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <span className="text-purple-400 mr-2">🧩</span> 3. End-to-End Development Stack
+                  </h3>
+                  <p className="text-white/80 mb-3">
+                    We handle every phase — from planning and design to deployment and optimization.
+                  </p>
+                  <ul className="text-white/80 list-disc pl-5 space-y-1 mb-4">
+                    <li>UX/UI Design</li>
+                    <li>Frontend + Backend Development</li>
+                    <li>Hosting, security, and performance tuning</li>
+                    <li>Ongoing support and updates</li>
+                  </ul>
+                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
+                    <span className="font-semibold">Key advantage:</span> You work with one team, from start to finish, with full transparency and technical expertise.
+                  </p>
+                </div>
+
+                <div className="border-t border-purple-500/30 pt-6"></div>
+                
+                {/* Built for Scale Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white flex items-center mb-3">
+                    <span className="text-purple-400 mr-2">🚀</span> Built for Scale
+                  </h3>
+                  <p className="text-white/80">
+                    Whether you're launching a new idea or modernizing your tech stack, we build with the future in mind — 
+                    secure, maintainable, and ready to grow.
+                  </p>
+                </div>
+              </div>
+            </ScrollArea>
+            
+            <div className="flex justify-end mt-6">
               <Button 
                 variant="purple"
                 onClick={handleCloseModal}
                 type="button"
+                className="shadow-glow hover:shadow-glow-intense"
               >
                 Close
               </Button>
