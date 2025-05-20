@@ -225,7 +225,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Service Detail Modals */}
+        {/* Service Detail Modals - Updated to remove emojis and change key advantage sections */}
         <Dialog open={openModal === 'aiAgents'} onOpenChange={(open) => !open && handleCloseModal()}>
           <DialogContent className="bg-black border border-purple-500 max-w-3xl">
             <DialogHeader>
@@ -248,8 +248,9 @@ const Index = () => {
                     <li>Book appointments directly into your calendar</li>
                     <li>Work 24/7 to support your users and reduce manual load</li>
                   </ul>
-                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
-                    <span className="font-semibold">Key advantage:</span> Handles the majority of user questions without human intervention and seamlessly integrates with your calendar tools to automate scheduling.
+                  <div className="key-advantage">Key Advantage:</div>
+                  <p className="text-white/90">
+                    Handles the majority of user questions without human intervention and seamlessly integrates with your calendar tools to automate scheduling.
                   </p>
                 </div>
 
@@ -267,8 +268,9 @@ const Index = () => {
                     <li>Book appointments automatically after confirming availability</li>
                     <li>Route urgent calls to the right human contact</li>
                   </ul>
-                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
-                    <span className="font-semibold">Key advantage:</span> Drastically reduce missed calls and scale your customer-facing operations without hiring more staff.
+                  <div className="key-advantage">Key Advantage:</div>
+                  <p className="text-white/90">
+                    Drastically reduce missed calls and scale your customer-facing operations without hiring more staff.
                   </p>
                 </div>
 
@@ -286,8 +288,9 @@ const Index = () => {
                     <li>Book appointments directly within the conversation</li>
                     <li>Maintain consistent brand voice and availability across platforms</li>
                   </ul>
-                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
-                    <span className="font-semibold">Key advantage:</span> Manage hundreds of conversations simultaneously and never miss a sales or support opportunity.
+                  <div className="key-advantage">Key Advantage:</div>
+                  <p className="text-white/90">
+                    Manage hundreds of conversations simultaneously and never miss a sales or support opportunity.
                   </p>
                 </div>
 
@@ -310,17 +313,6 @@ const Index = () => {
                 </div>
               </div>
             </ScrollArea>
-            
-            <div className="flex justify-end mt-6">
-              <Button 
-                variant="purple"
-                onClick={handleCloseModal}
-                type="button"
-                className="shadow-glow hover:shadow-glow-intense"
-              >
-                Close
-              </Button>
-            </div>
           </DialogContent>
         </Dialog>
 
@@ -328,7 +320,7 @@ const Index = () => {
           <DialogContent className="bg-black/90 backdrop-blur-lg border border-purple-500 max-w-3xl">
             <DialogHeader>
               <DialogTitle className="text-2xl text-gradient mb-2 flex items-center">
-                <Workflow className="mr-2 h-6 w-6 text-purple-400" /> ⚙️ Automated Workflows
+                <Workflow className="mr-2 h-6 w-6 text-purple-400" /> Automated Workflows
               </DialogTitle>
             </DialogHeader>
             
@@ -344,7 +336,7 @@ const Index = () => {
                 {/* AI-Powered Lead Generation */}
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
-                    <span className="text-purple-400 mr-2">🧲</span> 1. AI-Powered Lead Generation
+                    <span className="text-purple-400 mr-2">1.</span> AI-Powered Lead Generation
                   </h3>
                   <p className="text-white/80 mb-3">
                     Capture qualified leads across your website and social platforms using smart AI agents.
@@ -354,8 +346,9 @@ const Index = () => {
                     <li>Offer lead magnets (free guides, demos, etc.)</li>
                     <li>Capture key info without human involvement</li>
                   </ul>
-                  <p className="modal-content-highlight">
-                    <span className="font-semibold">Key Advantage:</span> Generates more qualified leads, 24/7, across multiple channels.
+                  <div className="key-advantage">Key Advantage:</div>
+                  <p className="text-white/90">
+                    Generates more qualified leads, 24/7, across multiple channels.
                   </p>
                 </div>
 
@@ -364,7 +357,7 @@ const Index = () => {
                 {/* Lead Qualification → CRM Sync */}
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
-                    <span className="text-purple-400 mr-2">🤖</span> 2. Lead Qualification → CRM Sync
+                    <span className="text-purple-400 mr-2">2.</span> Lead Qualification → CRM Sync
                   </h3>
                   <p className="text-white/80 mb-3">
                     After capturing a lead, AI engages them with tailored questions to understand intent, urgency, and potential fit.
@@ -374,8 +367,9 @@ const Index = () => {
                     <li>Filters out low-quality prospects</li>
                     <li>Automatically adds top leads to your CRM</li>
                   </ul>
-                  <p className="modal-content-highlight">
-                    <span className="font-semibold">Key Advantage:</span> Saves your sales team time and ensures follow-ups are focused on the highest-quality opportunities.
+                  <div className="key-advantage">Key Advantage:</div>
+                  <p className="text-white/90">
+                    Saves your sales team time and ensures follow-ups are focused on the highest-quality opportunities.
                   </p>
                 </div>
 
@@ -384,7 +378,7 @@ const Index = () => {
                 {/* Automated Lead Follow-Up */}
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
-                    <span className="text-purple-400 mr-2">🔁</span> 3. Automated Lead Follow-Up
+                    <span className="text-purple-400 mr-2">3.</span> Automated Lead Follow-Up
                   </h3>
                   <p className="text-white/80 mb-3">
                     Stay top-of-mind with leads who didn't convert right away.
@@ -394,8 +388,9 @@ const Index = () => {
                     <li>Offers value and prompts next steps</li>
                     <li>Re-engages leads automatically</li>
                   </ul>
-                  <p className="modal-content-highlight">
-                    <span className="font-semibold">Key Advantage:</span> Closes more deals over time with no manual outreach required.
+                  <div className="key-advantage">Key Advantage:</div>
+                  <p className="text-white/90">
+                    Closes more deals over time with no manual outreach required.
                   </p>
                 </div>
 
@@ -404,7 +399,7 @@ const Index = () => {
                 {/* Endless Possibilities */}
                 <div>
                   <h3 className="text-xl font-semibold text-white flex items-center mb-3">
-                    <span className="text-purple-400 mr-2">🔓</span> Endless Possibilities
+                    <span className="text-purple-400 mr-2"></span> Endless Possibilities
                   </h3>
                   <p className="text-white/80">
                     These are just a few examples—workflow automation can be tailored to fit any part of your business: operations, 
@@ -413,17 +408,6 @@ const Index = () => {
                 </div>
               </div>
             </ScrollArea>
-            
-            <div className="flex justify-end mt-6">
-              <Button 
-                variant="purple"
-                onClick={handleCloseModal}
-                type="button"
-                className="shadow-glow hover:shadow-glow-intense"
-              >
-                Close
-              </Button>
-            </div>
           </DialogContent>
         </Dialog>
 
@@ -431,7 +415,7 @@ const Index = () => {
           <DialogContent className="bg-black border border-purple-500 max-w-3xl">
             <DialogHeader>
               <DialogTitle className="text-2xl text-gradient mb-6 flex items-center">
-                <Code className="mr-2 h-6 w-6 text-purple-400" /> 💻 Web & App Development
+                <Code className="mr-2 h-6 w-6 text-purple-400" /> Web & App Development
               </DialogTitle>
             </DialogHeader>
             
@@ -447,7 +431,7 @@ const Index = () => {
                 {/* Website Development Section */}
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
-                    <span className="text-purple-400 mr-2">🕸️</span> 1. Website Development
+                    <span className="text-purple-400 mr-2">1.</span> Website Development
                   </h3>
                   <p className="text-white/80 mb-3">
                     From landing pages to full-scale websites, we deliver visually stunning, fast-loading, and responsive sites built to convert.
@@ -458,8 +442,9 @@ const Index = () => {
                     <li>Integrated with analytics and third-party tools</li>
                     <li>Custom animations and branded visuals</li>
                   </ul>
-                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
-                    <span className="font-semibold">Key advantage:</span> Your website becomes your best salesperson — accessible, compelling, and conversion-focused.
+                  <div className="key-advantage">Key Advantage:</div>
+                  <p className="text-white/90">
+                    Your website becomes your best salesperson — accessible, compelling, and conversion-focused.
                   </p>
                 </div>
 
@@ -468,7 +453,7 @@ const Index = () => {
                 {/* App Development Section */}
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
-                    <span className="text-purple-400 mr-2">📱</span> 2. App Development
+                    <span className="text-purple-400 mr-2">2.</span> App Development
                   </h3>
                   <p className="text-white/80 mb-3">
                     We develop web and mobile apps that are intuitive, scalable, and lightning-fast.
@@ -479,8 +464,9 @@ const Index = () => {
                     <li>API integrations and backend support</li>
                     <li>User-friendly interfaces and clean code</li>
                   </ul>
-                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
-                    <span className="font-semibold">Key advantage:</span> Turn your business idea or workflow into a fully functioning digital product that drives real value.
+                  <div className="key-advantage">Key Advantage:</div>
+                  <p className="text-white/90">
+                    Turn your business idea or workflow into a fully functioning digital product that drives real value.
                   </p>
                 </div>
 
@@ -489,7 +475,7 @@ const Index = () => {
                 {/* End-to-End Development Stack Section */}
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
-                    <span className="text-purple-400 mr-2">🧩</span> 3. End-to-End Development Stack
+                    <span className="text-purple-400 mr-2">3.</span> End-to-End Development Stack
                   </h3>
                   <p className="text-white/80 mb-3">
                     We handle every phase — from planning and design to deployment and optimization.
@@ -500,8 +486,9 @@ const Index = () => {
                     <li>Hosting, security, and performance tuning</li>
                     <li>Ongoing support and updates</li>
                   </ul>
-                  <p className="bg-purple-600/20 border border-purple-500/30 p-3 rounded-md">
-                    <span className="font-semibold">Key advantage:</span> You work with one team, from start to finish, with full transparency and technical expertise.
+                  <div className="key-advantage">Key Advantage:</div>
+                  <p className="text-white/90">
+                    You work with one team, from start to finish, with full transparency and technical expertise.
                   </p>
                 </div>
 
@@ -510,7 +497,7 @@ const Index = () => {
                 {/* Built for Scale Section */}
                 <div>
                   <h3 className="text-xl font-semibold text-white flex items-center mb-3">
-                    <span className="text-purple-400 mr-2">🚀</span> Built for Scale
+                    <span className="text-purple-400 mr-2"></span> Built for Scale
                   </h3>
                   <p className="text-white/80">
                     Whether you're launching a new idea or modernizing your tech stack, we build with the future in mind — 
@@ -519,17 +506,6 @@ const Index = () => {
                 </div>
               </div>
             </ScrollArea>
-            
-            <div className="flex justify-end mt-6">
-              <Button 
-                variant="purple"
-                onClick={handleCloseModal}
-                type="button"
-                className="shadow-glow hover:shadow-glow-intense"
-              >
-                Close
-              </Button>
-            </div>
           </DialogContent>
         </Dialog>
       </section>
