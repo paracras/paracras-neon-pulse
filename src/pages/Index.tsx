@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
-import { ArrowRight, Bot, Workflow, Code } from "lucide-react";
+import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users } from "lucide-react";
 import ParticleBackground from "@/components/ParticleBackground";
 import Navbar from "@/components/Navbar";
 
@@ -313,79 +313,63 @@ const Index = () => {
         }`}
       >
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-gradient">
-            Book a Call
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gradient">
+            Get in Touch
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm text-white/80">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  className="bg-transparent border-purple-500/50 focus:border-purple-500 text-white"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm text-white/80">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  className="bg-transparent border-purple-500/50 focus:border-purple-500 text-white"
-                  required
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label htmlFor="company" className="text-sm text-white/80">
-                Company
-              </label>
-              <Input
-                id="company"
-                className="bg-transparent border-purple-500/50 focus:border-purple-500 text-white"
-              />
-            </div>
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm text-white/80">
-                Project Description
-              </label>
-              <Textarea
-                id="message"
-                rows={5}
-                className="bg-transparent border-purple-500/50 focus:border-purple-500 text-white"
-                required
-              />
-            </div>
-            <div className="text-center pt-4">
-              <Button
-                type="submit"
-                size="lg"
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 shadow-glow transition-all duration-300 hover:shadow-glow-intense"
-              >
-                Schedule a Call
-              </Button>
-            </div>
+          <p className="text-center text-white/80 mb-16 max-w-2xl mx-auto">
+            Have a project in mind or questions about our AI solutions? We'd love to hear from you!
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Email Card */}
+            <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
+              <CardHeader className="flex items-center justify-center pb-0">
+                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                  <Mail className="h-8 w-8 text-purple-400" />
+                </div>
+                <CardTitle className="text-xl text-white">Email</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-4">
+                <a href="mailto:info@paracras.com" className="text-white/80 hover:text-purple-300 transition-colors">
+                  info@paracras.com
+                </a>
+              </CardContent>
+            </Card>
             
-            <div className="flex justify-center space-x-4 mt-8">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/40 transition-colors">
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </a>
-              <a href="mailto:contact@paracras.net" 
-                 className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/40 transition-colors">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </a>
-            </div>
-          </form>
+            {/* Call Card */}
+            <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
+              <CardHeader className="flex items-center justify-center pb-0">
+                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                  <Phone className="h-8 w-8 text-purple-400" />
+                </div>
+                <CardTitle className="text-xl text-white">Call</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-4">
+                <a href="tel:07388804746" className="text-white/80 hover:text-purple-300 transition-colors">
+                  07388804746
+                </a>
+              </CardContent>
+            </Card>
+            
+            {/* Follow Card */}
+            <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm">
+              <CardHeader className="flex items-center justify-center pb-0">
+                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                  <Users className="h-8 w-8 text-purple-400" />
+                </div>
+                <CardTitle className="text-xl text-white">Follow</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center pt-4 flex flex-col gap-2">
+                <a href="https://instagram.com/paracras" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-purple-300 transition-colors">
+                  Instagram: @paracras
+                </a>
+                <a href="https://x.com/paracras" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-purple-300 transition-colors">
+                  X (Twitter): @paracras
+                </a>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
