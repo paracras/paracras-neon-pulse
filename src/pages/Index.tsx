@@ -1,6 +1,8 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
@@ -15,6 +17,8 @@ const Index = () => {
     useCases: false,
     contact: false,
   });
+
+  const [openModal, setOpenModal] = useState<string | null>(null);
 
   const servicesRef = useRef<HTMLDivElement>(null);
   const howItWorksRef = useRef<HTMLDivElement>(null);
@@ -75,6 +79,21 @@ const Index = () => {
     }
   };
 
+  const serviceDetails = {
+    aiAgents: {
+      title: "AI Agents",
+      fullDescription: "Build intelligent, always-on virtual assistants tailored to your brand. From website-based chatbots and AI receptionists to social media bots — each is equipped with advanced NLP, seamless human handoff, and proactive engagement. Turn passive visitors into active conversations."
+    },
+    workflows: {
+      title: "Automated Workflows",
+      fullDescription: "Eliminate repetitive tasks with end-to-end workflows triggered by events, data, or human input. We integrate your tools (CRM, email, Slack, etc.) to automate lead routing, follow‑ups, order processing, reporting and more — so your business runs smarter, faster, and effortlessly."
+    },
+    webDev: {
+      title: "Web & App Development",
+      fullDescription: "From dynamic marketing sites to native/hybrid mobile apps and custom dashboards — we deliver polished, high-performance, responsive solutions. All built mobile-first and infused with your brand's bold black-purple-white glow."
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
@@ -98,7 +117,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - Updated with shorter descriptions and modal functionality */}
       <section
         ref={servicesRef}
         id="services"
@@ -112,7 +131,7 @@ const Index = () => {
             Our Services
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {/* AI Agents Card */}
+            {/* AI Agents Card - Updated with shorter description */}
             <Card
               className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col"
             >
@@ -127,20 +146,18 @@ const Index = () => {
               </CardHeader>
               <CardContent className="flex flex-col flex-grow">
                 <p className="text-white/70 mb-6 flex-grow">
-                  Build intelligent, always-on virtual assistants tailored to your brand. 
-                  From website-based chatbots and AI receptionists to social media bots — 
-                  each is equipped with advanced NLP, seamless human handoff, and proactive 
-                  engagement. Turn passive visitors into active conversations.
+                  Deploy smart virtual assistants across your website, phone, and social media.
                 </p>
                 <Button
                   className="bg-purple-600 hover:bg-purple-700 text-white mt-auto shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                  onClick={() => setOpenModal('aiAgents')}
                 >
-                  Explore AI Agents <ArrowRight className="ml-2 h-4 w-4" />
+                  More Info <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
 
-            {/* Automated Workflows Card */}
+            {/* Automated Workflows Card - Updated with shorter description */}
             <Card
               className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col"
             >
@@ -155,20 +172,18 @@ const Index = () => {
               </CardHeader>
               <CardContent className="flex flex-col flex-grow">
                 <p className="text-white/70 mb-6 flex-grow">
-                  Eliminate repetitive tasks with end-to-end workflows triggered by events, 
-                  data, or human input. We integrate your tools (CRM, email, Slack, etc.) 
-                  to automate lead routing, follow‑ups, order processing, reporting and more — 
-                  so your business runs smarter, faster, and effortlessly.
+                  Streamline operations with custom-built automations tailored to your business.
                 </p>
                 <Button
                   className="bg-purple-600 hover:bg-purple-700 text-white mt-auto shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                  onClick={() => setOpenModal('workflows')}
                 >
-                  See Workflow Examples <ArrowRight className="ml-2 h-4 w-4" />
+                  More Info <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
 
-            {/* Web & App Development Card */}
+            {/* Web & App Development Card - Updated with shorter description */}
             <Card
               className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col"
             >
@@ -183,19 +198,76 @@ const Index = () => {
               </CardHeader>
               <CardContent className="flex flex-col flex-grow">
                 <p className="text-white/70 mb-6 flex-grow">
-                  From dynamic marketing sites to native/hybrid mobile apps and custom dashboards — 
-                  we deliver polished, high-performance, responsive solutions. All built mobile-first 
-                  and infused with your brand's bold black-purple-white glow.
+                  Get high-performance websites and apps built with modern design and functionality.
                 </p>
                 <Button
                   className="bg-purple-600 hover:bg-purple-700 text-white mt-auto shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                  onClick={() => setOpenModal('webDev')}
                 >
-                  Start a Project <ArrowRight className="ml-2 h-4 w-4" />
+                  More Info <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
           </div>
         </div>
+
+        {/* Service Detail Modals */}
+        <Dialog open={openModal === 'aiAgents'} onOpenChange={(open) => !open && setOpenModal(null)}>
+          <DialogContent className="bg-black border border-purple-500 max-w-lg">
+            <DialogHeader>
+              <DialogTitle className="text-2xl text-gradient">{serviceDetails.aiAgents.title}</DialogTitle>
+              <DialogDescription className="text-white">
+                {serviceDetails.aiAgents.fullDescription}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex justify-end">
+              <Button 
+                className="bg-purple-600 hover:bg-purple-700 text-white shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                onClick={() => setOpenModal(null)}
+              >
+                Close
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        <Dialog open={openModal === 'workflows'} onOpenChange={(open) => !open && setOpenModal(null)}>
+          <DialogContent className="bg-black border border-purple-500 max-w-lg">
+            <DialogHeader>
+              <DialogTitle className="text-2xl text-gradient">{serviceDetails.workflows.title}</DialogTitle>
+              <DialogDescription className="text-white">
+                {serviceDetails.workflows.fullDescription}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex justify-end">
+              <Button 
+                className="bg-purple-600 hover:bg-purple-700 text-white shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                onClick={() => setOpenModal(null)}
+              >
+                Close
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        <Dialog open={openModal === 'webDev'} onOpenChange={(open) => !open && setOpenModal(null)}>
+          <DialogContent className="bg-black border border-purple-500 max-w-lg">
+            <DialogHeader>
+              <DialogTitle className="text-2xl text-gradient">{serviceDetails.webDev.title}</DialogTitle>
+              <DialogDescription className="text-white">
+                {serviceDetails.webDev.fullDescription}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex justify-end">
+              <Button 
+                className="bg-purple-600 hover:bg-purple-700 text-white shadow-glow-sm hover:shadow-glow transition-all duration-300"
+                onClick={() => setOpenModal(null)}
+              >
+                Close
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
       </section>
 
       {/* How It Works */}
