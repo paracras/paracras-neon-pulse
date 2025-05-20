@@ -60,7 +60,6 @@ const Navbar = () => {
             {/* Desktop navigation */}
             <div className="hidden md:flex space-x-8">
               {[
-                { name: "Home", id: "hero" },
                 { name: "Our Services", id: "services" },
                 { name: "How It Works", id: "how-it-works" },
                 { name: "Use Cases", id: "use-cases" },
@@ -101,7 +100,6 @@ const Navbar = () => {
         <div className="md:hidden backdrop-blur-xl bg-black/90 border border-purple-500/30 rounded-2xl mt-2 shadow-glow-sm animate-fade-in">
           <div className="px-4 pt-2 pb-4 space-y-4">
             {[
-              { name: "Home", id: "hero" },
               { name: "Our Services", id: "services" },
               { name: "How It Works", id: "how-it-works" },
               { name: "Use Cases", id: "use-cases" },

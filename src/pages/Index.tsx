@@ -60,6 +60,22 @@ const Index = () => {
     });
   };
 
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      const offset = 80; // Account for navbar height
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = servicesSection.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
@@ -70,17 +86,15 @@ const Index = () => {
           <ParticleBackground />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
-            Intelligent AI Automation for Businesses
+          <h1 className="text-4xl md:text-6xl font-bold mb-10 text-gradient">
+            Future Ready AI
           </h1>
-          <p className="text-xl md:text-2xl mb-10 text-white/80">
-            Advanced AI solutions to streamline processes and enhance efficiency
-          </p>
           <Button
             size="lg"
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-xl rounded-md shadow-glow transition-all duration-300 hover:shadow-glow-intense"
+            onClick={scrollToServices}
+            className="bg-transparent hover:bg-purple-900/20 text-white border border-purple-500 px-8 py-6 text-xl rounded-md shadow-glow transition-all duration-300 hover:shadow-glow-intense"
           >
-            Book a Call <ArrowRight className="ml-2" />
+            Explore <ArrowRight className="ml-2" />
           </Button>
         </div>
       </section>
