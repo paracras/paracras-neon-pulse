@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users, Instagram, Twitter } from "lucide-react";
+import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users, Instagram, Twitter, Zap, Calendar, MessageSquare, Database, Settings, FileText, LayoutDashboard } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import ParticleBackground from "@/components/ParticleBackground";
 import Navbar from "@/components/Navbar";
@@ -565,7 +565,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Use Cases */}
+      {/* Use Cases - Redesigned as "What Can We Automate?" */}
       <section
         ref={useCasesRef}
         id="use-cases"
@@ -575,43 +575,105 @@ const Index = () => {
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-gradient">
-            Use Cases
+            What Can We Automate?
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "E-Commerce",
-                description: "Automated inventory, customer support chatbots, personalized recommendations",
+                title: "Lead Generation",
+                description: "Capture and qualify leads automatically across website, chat, and social.",
+                icon: Zap
               },
               {
-                title: "SaaS",
-                description: "Onboarding automation, user engagement tracking, customer retention workflows",
+                title: "Appointment Booking",
+                description: "Let users book meetings instantly through chatbots, AI calls, or forms.",
+                icon: Calendar
               },
               {
-                title: "Service Industry",
-                description: "Appointment scheduling, follow-up sequences, feedback collection",
+                title: "Customer Support",
+                description: "Automate answers to FAQs, resolve issues, or escalate intelligently.",
+                icon: MessageSquare
               },
               {
-                title: "Healthcare",
-                description: "Patient communication, appointment reminders, records management",
+                title: "CRM & Data Entry",
+                description: "Sync customer data to your CRM with no manual effort.",
+                icon: Database
               },
               {
-                title: "Real Estate",
-                description: "Lead qualification, property matching, transaction management",
+                title: "Internal Task Automation",
+                description: "Automate back-office workflows like status updates, alerts, or follow-ups.",
+                icon: Settings
               },
               {
-                title: "Education",
-                description: "Student engagement, course delivery, progress tracking",
+                title: "Email & SMS Sequences",
+                description: "Send automated follow-ups, drip campaigns, and reminders based on triggers.",
+                icon: Mail
               },
-            ].map((useCase, index) => (
-              <div
+              {
+                title: "Social Media Responses",
+                description: "Reply to DMs or comments with AI agents on platforms like Instagram & X.",
+                icon: Instagram
+              },
+              {
+                title: "Form & Document Handling",
+                description: "Auto-send, track, or process documents and e-signatures.",
+                icon: FileText
+              },
+              {
+                title: "Custom Dashboards",
+                description: "Build tools to visualize operations, leads, or KPIs with real-time data.",
+                icon: LayoutDashboard
+              },
+            ].map((capability, index) => (
+              <Card
                 key={index}
-                className="p-4 bg-black border border-purple-500/30 rounded-lg hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm"
+                className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm contact-card"
               >
-                <h3 className="text-lg font-bold mb-2 text-white">{useCase.title}</h3>
-                <p className="text-white/70 text-sm">{useCase.description}</p>
-              </div>
+                <CardHeader className="flex flex-row items-start gap-4 pb-2">
+                  <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
+                    <capability.icon className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg font-bold text-white">{capability.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-white/70 text-sm">{capability.description}</p>
+                </CardContent>
+              </Card>
             ))}
+          </div>
+          
+          {/* CTA Section */}
+          <div className="mt-16 text-center">
+            <p className="text-white/90 text-lg max-w-3xl mx-auto mb-2">
+              <span className="font-semibold">Have a workflow in mind?</span>
+            </p>
+            <p className="text-white/80 mb-8 max-w-2xl mx-auto">
+              We build custom automation and AI solutions tailored to your business — no matter the platform, task, or industry.
+            </p>
+            <Button
+              variant="purple"
+              size="lg"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  const offset = 80; // Account for navbar height
+                  const bodyRect = document.body.getBoundingClientRect().top;
+                  const elementRect = contactSection.getBoundingClientRect().top;
+                  const elementPosition = elementRect - bodyRect;
+                  const offsetPosition = elementPosition - offset;
+
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+              className="px-8"
+            >
+              Let's Talk <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
         </div>
       </section>
