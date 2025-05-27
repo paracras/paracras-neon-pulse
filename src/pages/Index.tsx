@@ -113,7 +113,7 @@ const Index = () => {
             Future Ready AI
           </h1>
           <Button size="lg" onClick={scrollToServices} className="bg-transparent hover:bg-purple-900/20 text-white border border-purple-500 px-8 py-6 text-xl rounded-md shadow-glow transition-all duration-300 hover:shadow-glow-intense">
-            Explore <ArrowRight className="ml-2" />
+            Explore <ArrowRight className="ml-2" aria-label="Navigate to services section" />
           </Button>
         </div>
       </section>
@@ -130,7 +130,7 @@ const Index = () => {
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col contact-card">
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
-                  <Bot className="h-6 w-6 text-purple-400" />
+                  <Bot className="h-6 w-6 text-purple-400" aria-label="AI chatbot and automation icon" />
                 </div>
                 <CardTitle className="text-xl text-white">AI Agents</CardTitle>
                 <p className="text-purple-300 text-sm mt-2">
@@ -142,7 +142,7 @@ const Index = () => {
                   Deploy smart virtual assistants across your website, phone, and social media.
                 </p>
                 <Button variant="purple" className="mt-auto more-info-button" onClick={() => handleOpenModal('aiAgents')} type="button">
-                  More Info <ArrowRight className="ml-2 h-4 w-4" />
+                  More Info <ArrowRight className="ml-2 h-4 w-4" aria-label="Learn more about AI agents" />
                 </Button>
               </CardContent>
             </Card>
@@ -151,7 +151,7 @@ const Index = () => {
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col contact-card">
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
-                  <Workflow className="h-6 w-6 text-purple-400" />
+                  <Workflow className="h-6 w-6 text-purple-400" aria-label="Automated workflow and process icon" />
                 </div>
                 <CardTitle className="text-xl text-white">Automated Workflows</CardTitle>
                 <p className="text-purple-300 text-sm mt-2">
@@ -163,7 +163,7 @@ const Index = () => {
                   Streamline operations with custom-built automations tailored to your business.
                 </p>
                 <Button variant="purple" className="mt-auto more-info-button" onClick={() => handleOpenModal('workflows')} type="button">
-                  More Info <ArrowRight className="ml-2 h-4 w-4" />
+                  More Info <ArrowRight className="ml-2 h-4 w-4" aria-label="Learn more about automated workflows" />
                 </Button>
               </CardContent>
             </Card>
@@ -172,7 +172,7 @@ const Index = () => {
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm flex flex-col contact-card">
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
-                  <Code className="h-6 w-6 text-purple-400" />
+                  <Code className="h-6 w-6 text-purple-400" aria-label="Web development and programming icon" />
                 </div>
                 <CardTitle className="text-xl text-white">Web & App Development</CardTitle>
                 <p className="text-purple-300 text-sm mt-2">
@@ -184,7 +184,7 @@ const Index = () => {
                   Get high-performance websites and apps built with modern design and functionality.
                 </p>
                 <Button variant="purple" className="mt-auto more-info-button" onClick={() => handleOpenModal('webDev')} type="button">
-                  More Info <ArrowRight className="ml-2 h-4 w-4" />
+                  More Info <ArrowRight className="ml-2 h-4 w-4" aria-label="Learn more about web and app development" />
                 </Button>
               </CardContent>
             </Card>
@@ -196,7 +196,7 @@ const Index = () => {
           <DialogContent className="bg-black border border-purple-500 max-w-3xl">
             <DialogHeader>
               <DialogTitle className="text-2xl text-gradient mb-6 flex items-center">
-                <Bot className="mr-2 h-6 w-6 text-purple-400" /> AI Agents
+                <Bot className="mr-2 h-6 w-6 text-purple-400" aria-label="AI agents service icon" /> AI Agents
               </DialogTitle>
             </DialogHeader>
             
@@ -286,7 +286,7 @@ const Index = () => {
           <DialogContent className="bg-black/90 backdrop-blur-lg border border-purple-500 max-w-3xl">
             <DialogHeader>
               <DialogTitle className="text-2xl text-gradient mb-2 flex items-center">
-                <Workflow className="mr-2 h-6 w-6 text-purple-400" /> Automated Workflows
+                <Workflow className="mr-2 h-6 w-6 text-purple-400" aria-label="Automated workflows service icon" /> Automated Workflows
               </DialogTitle>
             </DialogHeader>
             
@@ -381,7 +381,7 @@ const Index = () => {
           <DialogContent className="bg-black border border-purple-500 max-w-3xl">
             <DialogHeader>
               <DialogTitle className="text-2xl text-gradient mb-6 flex items-center">
-                <Code className="mr-2 h-6 w-6 text-purple-400" /> Web & App Development
+                <Code className="mr-2 h-6 w-6 text-purple-400" aria-label="Web development service icon" /> Web & App Development
               </DialogTitle>
             </DialogHeader>
             
@@ -559,7 +559,7 @@ const Index = () => {
           }].map((capability, index) => <Card key={index} className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm contact-card">
                 <CardHeader className="flex flex-row items-start gap-4 pb-2">
                   <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
-                    <capability.icon className="h-5 w-5 text-purple-400" />
+                    <capability.icon className="h-5 w-5 text-purple-400" aria-label={`${capability.title} automation icon`} />
                   </div>
                   <div>
                     <CardTitle className="text-lg font-bold text-white">{capability.title}</CardTitle>
@@ -593,7 +593,7 @@ const Index = () => {
               });
             }
           }} className="px-8">
-              Let's Talk <ArrowRight className="ml-2 h-4 w-4" />
+              Let's Talk <ArrowRight className="ml-2 h-4 w-4" aria-label="Contact us to discuss your automation needs" />
             </Button>
           </div>
         </div>
@@ -616,7 +616,7 @@ const Index = () => {
               <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 h-full contact-card">
                 <CardHeader className="flex items-center justify-center pb-0">
                   <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
-                    <Mail className="h-8 w-8 text-purple-400" />
+                    <Mail className="h-8 w-8 text-purple-400" aria-label="Email contact icon" />
                   </div>
                   <CardTitle className="text-xl text-white">Email</CardTitle>
                 </CardHeader>
@@ -633,7 +633,7 @@ const Index = () => {
               <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 h-full contact-card">
                 <CardHeader className="flex items-center justify-center pb-0">
                   <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
-                    <Phone className="h-8 w-8 text-purple-400" />
+                    <Phone className="h-8 w-8 text-purple-400" aria-label="Phone contact icon" />
                   </div>
                   <CardTitle className="text-xl text-white">Call</CardTitle>
                 </CardHeader>
@@ -649,16 +649,16 @@ const Index = () => {
             <Card className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 h-full contact-card">
               <CardHeader className="flex items-center justify-center pb-0">
                 <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
-                  <Users className="h-8 w-8 text-purple-400" />
+                  <Users className="h-8 w-8 text-purple-400" aria-label="Social media follow icon" />
                 </div>
                 <CardTitle className="text-xl text-white">Follow</CardTitle>
               </CardHeader>
               <CardContent className="text-center pt-4 flex flex-col gap-2">
                 <a href="https://instagram.com/paracras" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2 contact-link">
-                  <Instagram className="h-5 w-5" /> @paracras
+                  <Instagram className="h-5 w-5" aria-label="Instagram social media icon" /> @paracras
                 </a>
                 <a href="https://x.com/paracras" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-purple-400 transition-colors inline-flex items-center justify-center gap-2 contact-link">
-                  <Twitter className="h-5 w-5" /> @paracras
+                  <Twitter className="h-5 w-5" aria-label="Twitter/X social media icon" /> @paracras
                 </a>
               </CardContent>
             </Card>
@@ -670,8 +670,8 @@ const Index = () => {
       <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-500/30">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Left: PARACRAS Logo */}
-          <div className="mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold text-gradient font-poppins text-center">PARACRAS</h2>
+          <div className="mb-6 md:mb-0 text-center md:text-left">
+            <h2 className="text-2xl font-bold text-gradient font-poppins">PARACRAS</h2>
             <p className="text-white/60">AI Automation Agency</p>
           </div>
           
@@ -682,10 +682,10 @@ const Index = () => {
           
           {/* Right: Social Icons */}
           <div className="flex space-x-6">
-            <a href="https://instagram.com/paracras" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="text-white hover:text-purple-400 transition-colors">
+            <a href="https://instagram.com/paracras" target="_blank" rel="noopener noreferrer" aria-label="Follow Paracras on Instagram" className="text-white hover:text-purple-400 transition-colors">
               <Instagram className="h-6 w-6 hover:shadow-glow transition-all duration-300" />
             </a>
-            <a href="https://x.com/paracras" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X (Twitter)" className="text-white hover:text-purple-400 transition-colors">
+            <a href="https://x.com/paracras" target="_blank" rel="noopener noreferrer" aria-label="Follow Paracras on X (Twitter)" className="text-white hover:text-purple-400 transition-colors">
               <Twitter className="h-6 w-6 hover:shadow-glow transition-all duration-300" />
             </a>
           </div>
