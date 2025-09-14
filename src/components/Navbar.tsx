@@ -54,10 +54,9 @@ const Navbar = () => {
                 onClick={() => scrollToSection('hero')}
               >
                 <img 
-                  src="/logo.png" 
+                  src="/logo-transparent.png" 
                   alt="Paracras AI Automation Logo - Gear and Network Design" 
-                  className="h-8 w-8 md:h-10 md:w-10 rounded-full object-cover object-center p-0.5"
-                  style={{ padding: '1px' }}
+                  className="h-10 w-10 md:h-12 md:w-12"
                 />
                 <h1 className="text-2xl font-bold text-white hover:text-gradient font-poppins uppercase tracking-wider">
                   Paracras
