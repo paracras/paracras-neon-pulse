@@ -49,19 +49,12 @@ const Navbar = () => {
           <nav className="flex justify-between items-center">
             {/* Logo */}
             <div className="mr-6 md:mr-12">
-              <div 
-                className="flex items-center gap-3 cursor-pointer py-2"
+              <h1 
+                className="text-2xl font-bold text-white hover:text-gradient cursor-pointer py-2 font-poppins uppercase tracking-wider"
                 onClick={() => scrollToSection('hero')}
               >
-                <img 
-                  src="/logo.png" 
-                  alt="Paracras AI Automation Logo - Gear and Network Design" 
-                  className="h-8 w-8 md:h-10 md:w-10"
-                />
-                <h1 className="text-2xl font-bold text-white hover:text-gradient font-poppins uppercase tracking-wider">
-                  Paracras
-                </h1>
-              </div>
+                Paracras
+              </h1>
             </div>
 
             {/* Desktop navigation */}
