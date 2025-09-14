@@ -57,6 +57,7 @@ const Navbar = () => {
                   src="/logo.png" 
                   alt="Paracras AI Automation Logo - Gear and Network Design" 
                   className="h-8 w-8 md:h-10 md:w-10 rounded-full object-cover object-center p-0.5"
+                  style={{ padding: '1px' }}
                 />
                 <h1 className="text-2xl font-bold text-white hover:text-gradient font-poppins uppercase tracking-wider">
                   Paracras
