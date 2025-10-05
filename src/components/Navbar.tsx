@@ -50,10 +50,10 @@ const Navbar = () => {
             {/* Logo */}
             <div className="mr-6 md:mr-12">
               <div 
-                className="flex items-end gap-3 cursor-pointer"
+                className="flex items-center gap-3 cursor-pointer py-2"
                 onClick={() => scrollToSection('hero')}
               >
-                <svg viewBox="40 50 120 110" xmlns="http://www.w3.org/2000/svg" className="h-12 w-12">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-20 w-20">
                   <defs>
                     <style>
                       {`.logo-primary { fill: none; stroke: #a855f7; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
