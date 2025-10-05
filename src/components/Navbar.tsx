@@ -53,7 +53,7 @@ const Navbar = () => {
                 className="flex items-center gap-3 cursor-pointer py-2"
                 onClick={() => scrollToSection('hero')}
               >
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 self-center -mt-1">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 self-center -mt-2">
                   <defs>
                     <style>
                       {`.logo-primary { fill: none; stroke: #a855f7; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
