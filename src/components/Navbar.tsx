@@ -48,10 +48,11 @@ const Navbar = () => {
         <div className="px-6">
           <nav className="flex justify-between items-center">
             {/* Logo */}
-            <div 
-              className="flex items-center gap-3 cursor-pointer"
-              onClick={() => scrollToSection('hero')}
-            >
+            <div className="mr-6 md:mr-12">
+              <div 
+                className="flex items-center gap-3 cursor-pointer py-2"
+                onClick={() => scrollToSection('hero')}
+              >
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-20 w-20">
                   <defs>
                     <style>
@@ -71,10 +72,11 @@ const Navbar = () => {
                 <h1 className="text-2xl font-bold text-white hover:text-gradient font-poppins uppercase tracking-wider">
                   Paracras
                 </h1>
+              </div>
             </div>
 
             {/* Desktop navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex space-x-8">
               {[
                 { name: "Our Services", id: "services" },
                 { name: "How It Works", id: "how-it-works" },
@@ -84,7 +86,7 @@ const Navbar = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-purple-400 transition-colors relative group font-poppins"
+                  className="text-white hover:text-purple-400 transition-colors relative group py-2 font-poppins"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
