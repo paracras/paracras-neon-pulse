@@ -49,12 +49,30 @@ const Navbar = () => {
           <nav className="flex justify-between items-center">
             {/* Logo */}
             <div className="mr-6 md:mr-12">
-              <h1 
-                className="text-2xl font-bold text-white hover:text-gradient cursor-pointer py-2 font-poppins uppercase tracking-wider"
+              <div 
+                className="flex items-center gap-3 cursor-pointer py-2"
                 onClick={() => scrollToSection('hero')}
               >
-                Paracras
-              </h1>
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8">
+                  <defs>
+                    <style>
+                      {`.logo-primary { fill: none; stroke: #a855f7; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+                      .logo-fill { fill: #a855f7; }`}
+                    </style>
+                  </defs>
+                  <rect x="60" y="80" width="80" height="70" rx="12" className="logo-primary"/>
+                  <line x1="100" y1="80" x2="100" y2="65" className="logo-primary"/>
+                  <circle cx="100" cy="60" r="5" className="logo-fill"/>
+                  <circle cx="52" cy="115" r="8" className="logo-fill"/>
+                  <circle cx="148" cy="115" r="8" className="logo-fill"/>
+                  <circle cx="80" cy="110" r="6" className="logo-fill"/>
+                  <circle cx="120" cy="110" r="6" className="logo-fill"/>
+                  <path d="M 85 130 Q 100 138 115 130" className="logo-primary"/>
+                </svg>
+                <h1 className="text-2xl font-bold text-white hover:text-gradient font-poppins uppercase tracking-wider">
+                  Paracras
+                </h1>
+              </div>
             </div>
 
             {/* Desktop navigation */}
