@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users, Instagram, Twitter, Zap, Calendar, MessageSquare, Database, Settings, FileText, LayoutDashboard } from "lucide-react";
+import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users, Instagram, Twitter, Zap, Calendar, MessageSquare, Database, Settings, FileText, LayoutDashboard, RotateCcw, Sparkles } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import ParticleBackground from "@/components/ParticleBackground";
 import Navbar from "@/components/Navbar";
@@ -526,20 +526,28 @@ const Index = () => {
             icon: Zap
           }, {
             title: "Appointment Booking",
-            description: "Let users book meetings instantly through chatbots, AI calls, or forms.",
+            description: "Schedule meetings seamlessly with AI voice agents, chatbots, or automated forms.",
             icon: Calendar
           }, {
             title: "Customer Support",
-            description: "Automate answers to FAQs, resolve issues, or escalate intelligently.",
+            description: "Deliver 24/7 support with AI voice agents, chatbots, and intelligent escalation.",
             icon: MessageSquare
+          }, {
+            title: "Lead Reactivation",
+            description: "Re-engage dormant leads from your database with personalized AI outreach.",
+            icon: RotateCcw
           }, {
             title: "Internal Task Automation",
             description: "Automate back-office workflows like status updates, alerts, or follow-ups.",
             icon: Settings
           }, {
-            title: "Email & SMS Sequences",
+            title: "Email & SMS Campaigns",
             description: "Send automated follow-ups, drip campaigns, and reminders based on triggers.",
             icon: Mail
+          }, {
+            title: "Content Generation",
+            description: "Create engaging social media content automatically using AI.",
+            icon: Sparkles
           }, {
             title: "Social Media Responses",
             description: "Reply to DMs or comments with AI agents on platforms like Instagram & X.",
