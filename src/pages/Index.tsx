@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users, Instagram, Twitter, Zap, Calendar, MessageSquare, Database, Settings, FileText, LayoutDashboard, RotateCcw, Sparkles } from "lucide-react";
+import { ArrowRight, Bot, Workflow, Code, Mail, Phone, Users, Instagram, Twitter, Zap, Calendar, MessageSquare, Database, Settings, FileText, LayoutDashboard, RotateCcw, Sparkles, Star } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import ParticleBackground from "@/components/ParticleBackground";
 import Navbar from "@/components/Navbar";
@@ -552,6 +552,10 @@ const Index = () => {
             title: "Social Media Responses",
             description: "Reply to DMs or comments with AI agents on platforms like Instagram & X.",
             icon: Instagram
+          }, {
+            title: "Review Management & Monitoring",
+            description: "Automatically track and respond to reviews across Google, Yelp, Facebook with AI-generated replies.",
+            icon: Star
           }].map((capability, index) => <Card key={index} className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm contact-card">
                 <CardHeader className="flex flex-row items-start gap-4 pb-2">
                   <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
@@ -666,9 +670,12 @@ const Index = () => {
       <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-500/30">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Left: PARACRAS Logo */}
-          <div className="mb-6 md:mb-0 text-center md:text-left">
-            <h2 className="text-2xl font-bold text-gradient font-poppins">PARACRAS</h2>
-            <p className="text-white/60">AI Automation Agency</p>
+          <div className="mb-6 md:mb-0 text-center md:text-left flex items-center gap-3">
+            <img src="/lovable-uploads/c80d04a6-2884-441f-a3c1-a279a7c56496.png" alt="Paracras Logo" className="h-10 w-10" />
+            <div>
+              <h2 className="text-2xl font-bold text-gradient font-poppins">PARACRAS</h2>
+              <p className="text-white/60">AI Automation Agency</p>
+            </div>
           </div>
           
           {/* Center: Copyright */}
