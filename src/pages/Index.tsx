@@ -671,7 +671,22 @@ const Index = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Left: PARACRAS Logo */}
           <div className="mb-6 md:mb-0 text-center md:text-left flex items-center gap-3">
-            <img src="/lovable-uploads/c80d04a6-2884-441f-a3c1-a279a7c56496.png" alt="Paracras Logo" className="h-10 w-10" />
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10">
+              <defs>
+                <style>
+                  {`.logo-primary { fill: none; stroke: #a855f7; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+                  .logo-fill { fill: #a855f7; }`}
+                </style>
+              </defs>
+              <rect x="60" y="80" width="80" height="70" rx="12" className="logo-primary"/>
+              <line x1="100" y1="80" x2="100" y2="65" className="logo-primary"/>
+              <circle cx="100" cy="60" r="5" className="logo-fill"/>
+              <circle cx="52" cy="115" r="8" className="logo-fill"/>
+              <circle cx="148" cy="115" r="8" className="logo-fill"/>
+              <circle cx="80" cy="110" r="6" className="logo-fill"/>
+              <circle cx="120" cy="110" r="6" className="logo-fill"/>
+              <path d="M 85 130 Q 100 138 115 130" className="logo-primary"/>
+            </svg>
             <div>
               <h2 className="text-2xl font-bold text-gradient font-poppins">PARACRAS</h2>
               <p className="text-white/60">AI Automation Agency</p>
