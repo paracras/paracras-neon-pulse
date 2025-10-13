@@ -521,7 +521,7 @@ const Index = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[{
-            title: "Lead Generation",
+            title: "Lead Qualification",
             description: "Capture and qualify leads automatically across website, chat, and social.",
             icon: Zap
           }, {
