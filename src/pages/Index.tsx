@@ -671,7 +671,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Left: PARACRAS Logo */}
           <div className="mb-6 md:mb-0 text-center md:text-left flex items-center gap-3">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-20 w-20">
               <defs>
                 <style>
                   {`.logo-primary { fill: none; stroke: #a855f7; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
@@ -689,7 +689,7 @@ const Index = () => {
             </svg>
             <div>
               <h2 className="text-2xl font-bold text-gradient font-poppins">PARACRAS</h2>
-              <p className="text-white/60">AI Automation Agency</p>
+              <p className="text-white/60">AI Agency</p>
             </div>
           </div>
           
