@@ -533,10 +533,6 @@ const Index = () => {
             description: "Automate answers to FAQs, resolve issues, or escalate intelligently.",
             icon: MessageSquare
           }, {
-            title: "CRM & Data Entry",
-            description: "Sync customer data to your CRM with no manual effort.",
-            icon: Database
-          }, {
             title: "Internal Task Automation",
             description: "Automate back-office workflows like status updates, alerts, or follow-ups.",
             icon: Settings
@@ -548,14 +544,6 @@ const Index = () => {
             title: "Social Media Responses",
             description: "Reply to DMs or comments with AI agents on platforms like Instagram & X.",
             icon: Instagram
-          }, {
-            title: "Form & Document Handling",
-            description: "Auto-send, track, or process documents and e-signatures.",
-            icon: FileText
-          }, {
-            title: "Custom Dashboards",
-            description: "Build tools to visualize operations, leads, or KPIs with real-time data.",
-            icon: LayoutDashboard
           }].map((capability, index) => <Card key={index} className="bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:shadow-glow-sm contact-card">
                 <CardHeader className="flex flex-row items-start gap-4 pb-2">
                   <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
